@@ -19,7 +19,12 @@ function appendEvents(events) {
         console.log(event);
         htmlTemplate += `
         <article>
+        <img src="${event.img}">
         <h2>${event.name}</h2>
+    <h2>${event.date}</h2>
+    <p>${event.description}</p>
+    <p>${event.location}</p>
+
        
         </article>
         `;
