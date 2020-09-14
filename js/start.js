@@ -19,10 +19,24 @@ function appendEvents(events) {
         console.log(event);
         htmlTemplate += `
         <article>
-        <h2>$(event.Date)</h2>
-        <h2>$(event.Location)</h2>
+        <h2>${event.name}</h2>
+       
         </article>
         `;
     }
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
