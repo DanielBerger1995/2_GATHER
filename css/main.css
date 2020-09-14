@@ -25,8 +25,8 @@ h1 {
   letter-spacing: 3px;
 }
 
-/* ---------- topbar styling ---------- */
-.topbar {
+/* ---------- tabbar styling ---------- */
+.tabbar {
   background-color: var(--light-grey);
     position: fixed;
     bottom: 0;
@@ -39,48 +39,14 @@ h1 {
     box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.16);
 }
 
-.topbar h2 {
-  margin: 0;
-  font-weight: 300;
-}
-
-.topbar a {
-  display: inline-block;
+/* Style the links inside the navigation bar */
+.tabbar a {
+    display: inline-block;
     color: black;
     text-align: center;
     padding: 20px 20px;
     text-decoration: none;
     font-size: 1.6em;
-}
-
-.topbar a.left {
-  left: 20px;
-}
-
-.topbar a.right {
-  right: 20px;
-}
-
-/* ---------- tabbar styling ---------- */
-.tabbar {
-  background-color: var(--green);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-/* Style the links inside the navigation bar */
-.tabbar a {
-  display: inline-block;
-  color: var(--text-color-light);
-  text-align: center;
-  padding: 20px 16px;
-  text-decoration: none;
-  font-size: 0.8em;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 /* Change the color of links on hover */
