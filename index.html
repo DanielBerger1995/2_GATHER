@@ -18,6 +18,8 @@
     <a href="#home">Home</a>
     <a href="#favourites">Favourites</a>
     <a href="#profile">Profile</a>
+    <a href="#calendar">Calendar</a>
+    <a href="#create">Add</a>
   </nav>
 
   <!-- pages -->
@@ -65,6 +67,25 @@
     </header>
     <!-- firebase auth container  -->
     <section id="firebaseui-auth-container"></section>
+  </section>
+
+  <section id="calendar" class="page">
+    <h2>Calendar</h2>
+  </section>
+
+  <section id="create" class="page">
+    <header class="topbar">
+      <a class="left" href="#home">Back</a>
+      <h2>Create user</h2>
+      <a class="right" onclick="createUser()">Save</a>
+    </header>
+    <form>
+      <input type="text" id="name" placeholder="Type your name" required>
+      <input type="email" id="mail" placeholder="Type your mail" required>
+      <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
+      <img id="imagePreview" class="image-preview">
+      <button type="button" name="button" onclick="createUser()">Save User</button>
+    </form>
   </section>
 
   <!-- loader  -->
