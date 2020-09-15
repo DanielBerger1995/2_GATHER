@@ -58,6 +58,16 @@ function appendEvents(events) {
 }
 
 
+function search(searchValue) {
+    searchValue = searchValue.toLowerCase();
+    let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
+   
+    console.log(filteredEvents);
+    appendEvents(events);
+}
+
+
+
 
 
 
