@@ -199,6 +199,8 @@ input {
 .grid-container>article {
   text-align: center;
   padding: 10px;
+  background-color: aquamarine;
+  margin: 20px;
 }
 
 .grid-container>article img {

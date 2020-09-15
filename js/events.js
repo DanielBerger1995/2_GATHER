@@ -3,16 +3,18 @@
 const _eventRef = _db.collection("Events");
 
 function orderByUpcoming() {
-_eventRef.orderBy("date").onSnapshot(function (snapshotData) {
-    let events = [];
-    snapshotData.forEach(function (doc) {
-        let event = doc.data();
-        event.id = doc.id;
-        events.push(event);
+    _eventRef.orderBy("date").onSnapshot(function (snapshotData) {
+        let events = [];
+        snapshotData.forEach(function (doc) {
+            let event = doc.data();
+            event.id = doc.id;
+            events.push(event);
+        });
+        appendEvents(events);
     });
-    appendEvents(events);
-});
 }
+
+orderByUpcoming();
 
 function orderByLocation() {
     _eventRef.orderBy("location").onSnapshot(function (snapshotData) {
@@ -24,19 +26,19 @@ function orderByLocation() {
         });
         appendEvents(events);
     });
-    }
+}
 
-    function orderByFriends() {
-        _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
-            let events = [];
-            snapshotData.forEach(function (doc) {
-                let event = doc.data();
-                event.id = doc.id;
-                events.push(event);
-            });
-            appendEvents(events);
+function orderByFriends() {
+    _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
+        let events = [];
+        snapshotData.forEach(function (doc) {
+            let event = doc.data();
+            event.id = doc.id;
+            events.push(event);
         });
-        }
+        appendEvents(events);
+    });
+}
 
 // append events to the DOM
 function appendEvents(events) {
