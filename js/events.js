@@ -45,3 +45,43 @@ function appendEvents(events) {
 
 
 
+// create new event
+// add a new event to firestore 
+
+
+
+function createEvent() {
+
+    let nameInput = document.querySelector('#name');
+    let descriptionInput = document.querySelector('#description');
+
+    let newEvent = {
+        name: nameInput.value,
+        description: descriptionInput.value,
+    };
+    _eventRef.add(newEvent);
+    navigateTo("userprofile");
+
+}
+
+
+
+/*
+
+    _userRef.add(newUser);
+    navigateTo("home");
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
