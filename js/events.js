@@ -50,7 +50,7 @@ function appendEvents(events) {
 
 
 
-function createEvent() {
+function createAnEvent() {
 
     let nameInput = document.querySelector('#name');
     let descriptionInput = document.querySelector('#description');
@@ -60,7 +60,6 @@ function createEvent() {
         description: descriptionInput.value,
     };
     _eventRef.add(newEvent);
-    navigateTo("userprofile");
 
 }
 
