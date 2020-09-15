@@ -255,3 +255,8 @@ input {
 .firebaseui-textfield.mdl-textfield .firebaseui-label::after {
   background-color: var(--green);
 }
+
+#create {
+  display: none;
+}
+

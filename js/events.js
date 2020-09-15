@@ -60,6 +60,14 @@ function createAnEvent() {
         description: descriptionInput.value,
     };
     _eventRef.add(newEvent);
+    document.getElementById("create").style.display = "none";
+
+}
+
+// button to open the form
+
+function openForm() {
+    document.getElementById("create").style.display = "block";
 
 }
 
