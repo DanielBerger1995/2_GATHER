@@ -24,7 +24,7 @@ function appendEvents(events) {
     <h2>${event.date}</h2>
     <p>${event.description}</p>
     <p>${event.location}</p>
-
+<p>${event.time}</p>
        
         </article>
         `;

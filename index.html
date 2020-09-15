@@ -28,6 +28,13 @@
   <section id="home" class="page">
     <header class="topbar">
       <h2>Home</h2>
+      <nav class="nav">
+        <a href="#" class="nav-item is-active" active-color="black">UPCOMING</a>
+        <a href="#" class="nav-item" active-color="black">NEAREST</a>
+        <a href="#" class="nav-item" active-color="black">FRIENDS</a>
+
+        <span class="nav-indicator"></span>
+      </nav>
     </header>
     <div id="movie-container" class="grid-container"></div>
 
@@ -101,7 +108,7 @@
       <form>
         <input type="text" id="name" placeholder="Name of the event" required>
         <input type="text" id="description" placeholder="Write the description" required>
-        <button type="button" name="button" onclick="createAnEvent()">Add Event</button>
+        <button type="button" name="button" onclick="createEvent()">Add Event</button>
       </form>
     </div>
 
@@ -109,7 +116,20 @@
 
 
 
-
+  <section id="create" class="page">
+    <header class="topbar">
+      <a class="left" href="#home">Back</a>
+      <h2>Create user</h2>
+      <a class="right" onclick="createUser()">Save</a>
+    </header>
+    <form>
+      <input type="text" id="name" placeholder="Type your name" required>
+      <input type="email" id="mail" placeholder="Type your mail" required>
+      <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
+      <img id="imagePreview" class="image-preview">
+      <button type="button" name="button" onclick="createUser()">Save User</button>
+    </form>
+  </section>
 
   <!-- loader  -->
   <div id="loader">
@@ -127,6 +147,8 @@
   <!-- main js file -->
   <script src="js/login.js"></script>
   <script src="js/events.js"></script>
+  <script src="js/underline.js"></script>
+
 </body>
 
 
