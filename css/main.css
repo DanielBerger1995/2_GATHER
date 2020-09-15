@@ -252,9 +252,35 @@ input {
   background-color: var(--green);
 }
 
+
+/* creating event section */
 #create {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
+
+.create_div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+i.fas.fa-times {
+  color: white;
+  font-size: 5.5vw;
+}
+
+.close_icon {
+  background-color: black;
+  width: 6vw;
+  height: 6vw;
+  padding: 0;
+}
+
+
 
 
 

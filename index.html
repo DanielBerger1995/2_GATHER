@@ -110,10 +110,45 @@
     <button type="button" name="button" id="openFormButton" onclick="openForm()">CREATE AN EVENT</button>
 
     <div id="create" class="page">
+      <div class="create_div">
+        <button onclick="closeIcon()" class="close_icon"><i class="fas fa-times"></i></button>
+        <h1 class="create_header">CREATE AN EVENT</h1>
+      </div>
       <form>
-        <input type="text" id="name" placeholder="Name of the event" required>
+        <input type="text" id="name" placeholder="NAME OF THE EVENT" required>
+        <input type="text" id="location" placeholder="ADDRESS" required>
+        <input type="date" id="date" required>
+        <div class="create_div"><input type="number" id="price" placeholder="PRICE" required>
+          <p class="create_price">kr</p>
+        </div>
+        <div class="create_div">
+          <p class="create_free">FREE</p><input type="checkbox" id="free" required>
+        </div>
+
         <input type="text" id="description" placeholder="Write the description" required>
-        <button type="button" name="button" onclick="createEvent()">Add Event</button>
+        <div class="create_div">
+          <p class="create_category">CHOOSE CATEGORY</p>
+          <select id="categories" name="categories" aria-placeholder="CHOOSE CATEGORY">
+            <option value="music" class="categ">Music</option>
+            <option value="party" class="categ">Party</option>
+            <option value="sport" class="categ">Sport</option>
+            <option value="art" class="categ">Art</option>
+            <option value="games" class="categ">Games</option>
+            <option value="food" class="categ">Food</option>
+            <option value="technology" class="categ">Technology</option>
+            <option value="culture" class="categ">Culture</option>
+            <option value="education" class="categ">Education</option>
+            <option value="literature" class="categ">Literature</option>
+            <option value="shopping" class="categ">Shopping</option>
+            <option value="sightseeing" class="categ">Sightseeing</option>
+            <option value="movies" class="categ">Movies</option>
+            <option value="environment" class="categ">Environment</option>
+          </select>
+        </div>
+        <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
+        <img id="imagePreview" class="image-preview">
+        <button type="button" name="button" onclick="createAnEvent()">Add Event</button>
+
       </form>
     </div>
 
