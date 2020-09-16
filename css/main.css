@@ -378,6 +378,10 @@ i.fas.fa-times {
 #searchbar {
   width: 300px;
   border: none;
+  background-color: #f4f4f4;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
 }
 
 #categories-container{
