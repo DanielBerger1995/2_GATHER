@@ -218,7 +218,7 @@ input {
   margin: 0;
 }
 
-.grid-container>article h3 {
+.grid-container>article h5 {
   text-align: left;
   font-family: rift,sans-serif;
   font-weight: 700;
