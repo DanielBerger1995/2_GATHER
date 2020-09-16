@@ -39,6 +39,7 @@ function pageChange() {
   if (location.hash) {
     page = location.hash.slice(1);
   }
+
   showPage(page);
 }
 

@@ -74,3 +74,70 @@ function appendEvents(events) {
 
 
 
+// create new event
+// add a new event to firestore 
+
+
+
+function createAnEvent() {
+
+    let nameInput = document.querySelector('#name');
+    let descriptionInput = document.querySelector('#description');
+    let imageInput = document.querySelector('#imagePreview');
+    let priceInput = document.querySelector('#price');
+    let freeInput = document.querySelector('#free');
+    let categoriesInput = document.querySelector('#categories');
+
+    let newEvent = {
+        name: nameInput.value,
+        description: descriptionInput.value,
+        img: imageInput.src,
+        price: priceInput.value,
+        price: freeInput.value = "0",
+        category: categoriesInput.value
+    };
+    _eventRef.add(newEvent);
+    document.getElementById("create").style.display = "none";
+
+}
+
+function search(searchValue) {
+    searchValue = searchValue.toLowerCase();
+    let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
+
+    console.log(filteredEvents);
+    appendEvents(events);
+}
+
+function previewImage(file, previewId) {
+    if (file) {
+        _selectedImgFile = file;
+        let reader = new FileReader();
+        reader.onload = event => {
+            document.querySelector('#' + previewId).setAttribute('src', event.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+// button to open the form
+
+function openForm() {
+    document.getElementById("create").style.display = "block";
+}
+
+
+function closeIcon() {
+    document.getElementById("create").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
+
