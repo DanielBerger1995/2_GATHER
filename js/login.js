@@ -18,6 +18,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function userAuthenticated(user) {
     _currentUser = user;
+    console.log(_currentUser);
     hideTabbar(false);
     init();
     showLoader(false);
