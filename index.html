@@ -10,6 +10,7 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
   <link rel="stylesheet" href="css/main.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+  <link rel="stylesheet" href="https://use.typekit.net/hfm1aui.css">
   <script src="https://kit.fontawesome.com/1e6b508437.js" crossorigin="anonymous"></script>
 </head>
 
@@ -27,7 +28,8 @@
   <!-- home page -->
   <section id="home" class="page">
     <header class="topbar">
-      <h2>Home</h2>
+      <h2>Hi User!</h2>
+      <p>These are the newest Events<br>you may be interested in:</p>
       <nav class="nav">
         <a href="#" class="nav-item is-active" active-color="black" onclick="orderByUpcoming()">UPCOMING</a>
         <a href="#" class="nav-item" active-color="black" onclick="orderByLocation()">NEAREST</a>
@@ -41,8 +43,11 @@
   </section>
 
   <!-- favourites page -->
-  <section id="search" class="page">
-    <input id="searchbar" type="search" placeholder="Search for a movie..." onkeyup="search(this.value)">
+  <section id="favourites" class="page">
+    <header class="topbar">
+      <h2>Favourites</h2>
+    </header>
+    <div id="fav-movie-container" class="grid-container"></div>
   </section>
 
 

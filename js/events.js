@@ -48,9 +48,13 @@ function appendEvents(events) {
         htmlTemplate += `
         <article>
         <img src="${event.img}">
+        <div class="padding">
         <h2>${event.name}</h2>
-        <p>${event.date}</p>
-        <p>${event.location}</p>
+        <h4>${event.month}</h4>
+        <h3 class="text-adjust">${event.day}</h3>
+        <p class="text-adjust" style="padding: 0 0 0 5px">Organiser: ${event.organiser}</p><br>
+        <p style="float:right">${event.price}</p>
+        </div>
         </article>
         `;
     }
