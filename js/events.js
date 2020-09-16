@@ -70,23 +70,8 @@ function appendEvents(events) {
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // create new event
 // add a new event to firestore 
-
-
 
 function createAnEvent() {
 
@@ -113,12 +98,24 @@ function createAnEvent() {
 
 //////////SEARCHBAR FUNCIONALITY
 function search(searchValue) {
-    searchValue = searchValue.toLowerCase();
-    let filteredMovies = events.filter(event => event.title.rendered.toLowerCase().includes(searchValue));
-   
-    console.log(filteredEvents);
-    appendMovies(filteredEvents);
-}
+    _eventRef.onSnapshot(function(snapshotData) {
+        let events = [];
+        snapshotData.forEach(function (doc) {
+            let event = doc.data();
+            event.id = doc.id;
+            events.push(event);
+        });
+
+        searchValue = searchValue.toLowerCase();
+        let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
+        
+        console.log(filteredEvents);
+
+
+    });
+};
+
+
 
 
 
