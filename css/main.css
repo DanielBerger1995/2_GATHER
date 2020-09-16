@@ -13,7 +13,6 @@ html {
     text-align: center;
     width: 100%;
     font-weight: 200;
-    
 }
 
 body {
@@ -26,10 +25,7 @@ h2 {
   font-style: normal;
 }
 
-page {
-  background-color: white;
-}
-#home, #search, #tickets, #calendar, #userprofile {
+#home, #login, #search, #tickets, #calendar, #userprofile {
   background-color: white;
 }
 
@@ -75,7 +71,7 @@ page {
   display: none;
   /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh - 110px);
-  background: var(--light-grey);
+  background-color: white;
   animation: fadeIn 0.4s;
   /* padding equals height of tabbar and topbar */
   padding: 55px 0;
@@ -148,48 +144,52 @@ page {
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-/* ---------- input form stryling ---------- */
-form {
-  padding: 2em 1em 2.5em;
-}
-
-form button {
-  font-weight: 200;
+/* login page styling */
+button {
   text-align: center;
-  cursor: pointer;
-  border: none;
   padding: 12px 15px;
-  font-size: 1em;
-  border-radius: 0;
-  color: var(--text-color-light);
-  background-color: var(--green);
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 75px;
 }
 
-article button {
-  font-weight: 200;
-  text-align: center;
-  cursor: pointer;
-  border: none;
-  padding: 10px 8px;
-  border-radius: 0;
-  color: var(--text-color-light);
-  background-color: var(--green);
-  width: 40%;
+.text-log-in {
+  font-family: rift,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
 }
 
-article button.rm {
-  background-color: var(--light-green);
+.account {
+  font-size: 16px;
 }
 
 input {
   margin: 1em auto;
   width: 100%;
-  max-width: 350px;
+  max-width: 300px;
   padding: 12px 15px;
-  box-sizing: border-box;
+  border: none; 
+  border-bottom: solid 1px rgba(0,0,0);
   display: block;
+  color: #e4e4e4;
+  background-color: rgb(255, 255, 255, 0);
+  font-size: 20px;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.authentication-login {
+  margin-top: 42px;
+  position: relative;
 }
 
 /* Grid container */
@@ -241,13 +241,18 @@ input {
   font-family: rift,sans-serif;
   font-weight: 400;
   font-style: normal;
-  margin-top: 17px;
+  /* margin-top: 17px; */
 }
 
 .text-adjust {
   display: inline-block;
   float: left;
 }
+
+/* .headline-help {
+  display: inline-block;
+  
+} */
 
 .padding {
   padding: 12px;

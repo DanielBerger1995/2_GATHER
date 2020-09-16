@@ -49,8 +49,8 @@ function appendEvents(events) {
         <article>
         <img src="${event.img}">
         <div class="padding">
-        <h2>${event.name}</h2>
-        <h4>${event.month}</h4>
+        <h4 class="headline-help">${event.month}</h4>
+        <h2 class="headline-help" style="float: right">${event.name}</h2>
         <h5 class="text-adjust">${event.day}</h5>
         <p class="text-adjust" style="padding: 0 0 0 5px">Organiser: ${event.organiser}</p><br>
         <p style="float:right">${event.price}</p>
