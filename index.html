@@ -118,16 +118,6 @@
       </div>
       <form>
         <input type="text" id="name" placeholder="NAME OF THE EVENT" required>
-        <input type="text" id="location" placeholder="ADDRESS" required>
-        <input type="date" id="date" required>
-        <div class="create_div"><input type="number" id="price" placeholder="PRICE" required>
-          <p class="create_price">kr</p>
-        </div>
-        <div class="create_div">
-          <p class="create_free">FREE</p><input type="checkbox" id="free" required>
-        </div>
-
-        <input type="text" id="description" placeholder="Write the description" required>
         <div class="create_div">
           <p class="create_category">CHOOSE CATEGORY</p>
           <select id="categories" name="categories" aria-placeholder="CHOOSE CATEGORY">
@@ -147,6 +137,17 @@
             <option value="environment" class="categ">Environment</option>
           </select>
         </div>
+        <input type="text" id="location" placeholder="ADDRESS" required>
+        <input type="date" id="date" required>
+        <div class="create_div"><input type="number" id="price" placeholder="PRICE" required>
+          <p class="create_price">kr</p>
+        </div>
+        <div class="create_div">
+          <p class="create_free">FREE</p><input type="checkbox" id="free" required>
+        </div>
+
+        <input type="text" id="description" placeholder="Write the description" required>
+
         <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
         <img id="imagePreview" class="image-preview">
         <button type="button" name="button" onclick="createAnEvent()">Add Event</button>
