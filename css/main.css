@@ -291,11 +291,8 @@ h7 {
 
 /* ---------- authentication styling ---------- */
 #firebaseui-auth-container {
-  position: absolute;
   top: 50%;
   width: 100%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .firebaseui-container {
