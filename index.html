@@ -131,7 +131,7 @@
         <button onclick="closeIcon()" class="close_icon"><i class="fas fa-times"></i></button>
         <h1 class="create_header">CREATE AN EVENT</h1>
       </div>
-      <form>
+      <form id="myForm">
         <input type="text" id="name" placeholder="NAME OF THE EVENT" required>
         <div class="create_div">
           <p class="create_category">CHOOSE CATEGORY</p>
@@ -174,20 +174,7 @@
 
 
 
-  <section id="create" class="page">
-    <header class="topbar">
-      <a class="left" href="#home">Back</a>
-      <h2>Create user</h2>
-      <a class="right" onclick="createUser()">Save</a>
-    </header>
-    <form>
-      <input type="text" id="name" placeholder="Type your name" required>
-      <input type="email" id="mail" placeholder="Type your mail" required>
-      <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
-      <img id="imagePreview" class="image-preview">
-      <button type="button" name="button" onclick="createUser()">Save User</button>
-    </form>
-  </section>
+
 
   <!-- loader  -->
   <div id="loader">

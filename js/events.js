@@ -1,6 +1,10 @@
 "use strict";
 
 const _eventRef = _db.collection("Events");
+let _selectedImgFile = "";
+
+
+
 
 function orderByUpcoming() {
     _eventRef.orderBy("date").onSnapshot(function (snapshotData) {
@@ -98,11 +102,12 @@ function createAnEvent() {
         description: descriptionInput.value,
         img: imageInput.src,
         price: priceInput.value,
-        price: freeInput.value = "0",
+        price: freeInput.value = "FREE",
         category: categoriesInput.value
     };
     _eventRef.add(newEvent);
     document.getElementById("create").style.display = "none";
+    document.getElementById("myForm").reset();
 
 }
 
@@ -114,6 +119,7 @@ function search(searchValue) {
     console.log(filteredEvents);
     appendMovies(filteredEvents);
 }
+
 
 
 function previewImage(file, previewId) {
@@ -138,6 +144,11 @@ function closeIcon() {
     document.getElementById("create").style.display = "none";
 }
 
+
+
+
+// log in with facebook appearing information
+// make the API call
 
 
 
