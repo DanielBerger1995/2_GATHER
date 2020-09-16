@@ -49,12 +49,17 @@ function appendEvents(events) {
         <article>
         <img src="${event.img}">
         <div class="padding">
-        <h4 class="headline-help">${event.month}</h4>
-        <h2 class="headline-help" style="float: right">${event.name}</h2>
-        <h5 class="text-adjust">${event.day}</h5>
-        <p class="text-adjust" style="padding: 0 0 0 5px">Organiser: ${event.organiser}</p><br>
-        <p style="float:right">${event.price}</p>
+        <div class= "event_date"
+                <h4>${event.month}</h4>
+                <h5 class="text-adjust">${event.day}</h5>
+            </div>
+            <div class="event_title">
+                <h2>${event.name}</h2>
+                <p class="text-adjust" >Organiser: ${event.organiser}</p>
+            </div>
+            <h7 clas="event_price">${event.price}</h7>
         </div>
+        
         </article>
         `;
     }
@@ -101,13 +106,15 @@ function createAnEvent() {
 
 }
 
+//////////SEARCHBAR FUNCIONALITY
 function search(searchValue) {
     searchValue = searchValue.toLowerCase();
-    let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
-
+    let filteredMovies = events.filter(event => event.title.rendered.toLowerCase().includes(searchValue));
+   
     console.log(filteredEvents);
-    appendEvents(events);
+    appendMovies(filteredEvents);
 }
+
 
 function previewImage(file, previewId) {
     if (file) {
