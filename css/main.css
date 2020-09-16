@@ -149,7 +149,7 @@ h2 {
 }
 
 /* login page styling */
-button {
+.login-button {
   text-align: center;
   padding: 12px 15px;
   width: 100%;
@@ -175,7 +175,7 @@ button {
   font-size: 16px;
 }
 
-input {
+.login-input {
   margin: 1em auto;
   width: 100%;
   max-width: 300px;
