@@ -29,9 +29,10 @@ h2 {
 page {
   background-color: white;
 }
-#home {
+#home, #search, #tickets, #calendar, #userprofile {
   background-color: white;
 }
+
 /* ---------- tabbar styling ---------- */
 .tabbar {
   background-color: var(--light-grey);
@@ -330,14 +331,14 @@ i.fas.fa-times {
    justify-content: space-around;
 	 overflow: hidden;
 	 width: 100%;
-	 background-color: white;
+	 background-color: #f4f4f4;
 	 -webkit-box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.16);
     -moz-box-shadow: 0px -3px 6px 0px rgba(0,0,0,0.16);
     box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
 }
  .nav-item {
    color: #83818c;
-   background-color: white;
+   background-color: #f4f4f4;
 	 padding: 20px;
 	 text-decoration: none;
 	 transition: 0.3s;
