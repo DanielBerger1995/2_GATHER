@@ -122,3 +122,7 @@ function init() {
         }
     });
 }
+
+function goHome() {
+    navigateTo("#home");
+}
