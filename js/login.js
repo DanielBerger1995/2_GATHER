@@ -1,11 +1,10 @@
 "use strict";
 
 // ========== GLOBAL VARIABLES ========== //
-const _movieRef = _db.collection("movies");
+const eventRef = _db.collection("Events");
 const _userRef = _db.collection("users")
 let _currentUser;
 let _movies;
-
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(function (user) {
@@ -18,11 +17,17 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function userAuthenticated(user) {
     _currentUser = user;
-    console.log(_currentUser);
+    console.log(user.displayName);
     hideTabbar(false);
     init();
     showLoader(false);
 }
+
+
+
+
+
+
 
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
@@ -57,53 +62,22 @@ function hideTabbar(hide) {
 // sign out user
 function logout() {
     firebase.auth().signOut();
-    // reset input fields
-    document.querySelector('#name').value = "";
-    document.querySelector('#mail').value = "";
-    document.querySelector('#birthdate').value = "";
-    document.querySelector('#hairColor').value = "";
-    document.querySelector('#imagePreview').src = "";
 }
 
 // ========== PROFILE PAGE FUNCTIONALITY ========== //
 // append user data to profile page
-function appendUserData() {
-    document.querySelector('#name').value = _currentUser.displayName;
-    document.querySelector('#mail').value = _currentUser.email;
-    document.querySelector('#birthdate').value = _currentUser.birthdate;
-    document.querySelector('#hairColor').value = _currentUser.hairColor;
-    document.querySelector('#imagePreview').src = _currentUser.img;
-}
+
 
 // update user data - auth user and database object
-function updateUser() {
-    let user = firebase.auth().currentUser;
 
-    // update auth user
-    user.updateProfile({
-        displayName: document.querySelector('#name').value
-    });
+// update auth user
 
-    // update database user
-    _userRef.doc(_currentUser.uid).set({
-        img: document.querySelector('#imagePreview').src,
-        birthdate: document.querySelector('#birthdate').value,
-        hairColor: document.querySelector('#hairColor').value
-    }, {
-        merge: true
-    });
-}
 
-// ========== Prieview image function ========== //
-function previewImage(file, previewId) {
-    if (file) {
-        let reader = new FileReader();
-        reader.onload = function (event) {
-            document.querySelector('#' + previewId).setAttribute('src', event.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
-}
+// update database user
+
+
+
+
 function init() {
     // init user data and favourite movies
     _userRef.doc(_currentUser.uid).onSnapshot({
@@ -122,8 +96,4 @@ function init() {
             showLoader(false);
         }
     });
-}
-
-function goHome() {
-    navigateTo("#home");
 }

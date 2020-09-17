@@ -98,7 +98,7 @@ function createAnEvent() {
 
 //////////SEARCHBAR FUNCIONALITY
 function search(searchValue) {
-    _eventRef.onSnapshot(function(snapshotData) {
+    _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
             let event = doc.data();
@@ -108,7 +108,7 @@ function search(searchValue) {
 
         searchValue = searchValue.toLowerCase();
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
-        
+
         console.log(filteredEvents);
 
 
@@ -144,11 +144,27 @@ function closeIcon() {
 
 
 
-// log in with facebook appearing information
-// make the API call
+// appearing created events in the profile
 
-
-
+function init() {
+    // init user data and favourite movies
+    _userRef.doc(_currentUser.uid).onSnapshot({
+        includeMetadataChanges: true
+    }, function (userData) {
+        if (!userData.metadata.hasPendingWrites && userData.data()) {
+            _currentUser = {
+                ...firebase.auth().currentUser,
+                ...userData.data()
+            }; //concating two objects: authUser object and userData objec from the db
+            appendUserData();
+            appendFavMovies(_currentUser.favMovies);
+            if (_movies) {
+                appendMovies(_movies); // refresh movies when user data changes
+            }
+            showLoader(false);
+        }
+    });
+}
 
 
 
