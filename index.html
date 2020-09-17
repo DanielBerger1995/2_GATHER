@@ -24,6 +24,8 @@
     <a href="#userprofile"><i class="fas fa-user-circle"></i></a>
   </nav>
 
+
+
   <!-- pages -->
   <!-- home page -->
   <section id="home" class="page">
@@ -82,41 +84,45 @@
   </section>
 
   <section id="calendar" class="page">
-    <h2>Calendar</h2>
-    <h2>Calendar</h2>
-    <h2>Calendar</h2>
-    <h2>YAAAAAAAAAAAAY</h2>
-    <h2>hfadifhoasjofasoi</h2>
-    <h2>YAAAAAAAAAAAAYHorrraaaay</h2>
 
-    <h2>Hola</h2>
-
-
-
-
-
-
-    <h2>Changing cause Dan wanted</h2>
-
-
-
-
-
-
-
-    <h1>WORKS</h1>
-
-
-    <p>Blah blah hello</p>
-    <p>ihfsdfsdjfsfsdiufdsfhdsofusdoiufidsfdshf</p>
-    <p>second time</p>
   </section>
 
   <section id="tickets" class="page"></section>
 
 
 
+
+  <!-- user profile section  -->
   <section id="userprofile" class="page">
+
+
+    <!-- user container  -->
+    <div id="profile-container">
+
+      <button class="set_icon" onclick="openSettings()"><i class="fas fa-cog"></i></button>
+
+
+
+      <section id="settings" class="page">
+        <div class="create_div">
+          <button class="back_button" onclick="closeSettings()"><i class="fas fa-chevron-left"></i></button>
+          <h1 class="create_header">SETTINGS</h1>
+        </div>
+
+        <div class="button_div">
+          <div>
+            <button class="settButton" onclick="">PRIVACY<span><i class="fas fa-chevron-right"></i></span></button>
+            <button class="settButton" onclick="">Notifications<span><i
+                  class="fas fa-chevron-right"></i></span></button>
+            <button class="settButton" onclick="">payment<span><i class="fas fa-chevron-right"></i></span></button>
+            <button class="settButton" onclick="">edit chosen categories<span><i
+                  class="fas fa-chevron-right"></i></span></button>
+          </div>
+          <button type="button" name="button" class="log_out" onclick="logout()">LOG OUT</button>
+        </div>
+      </section>
+    </div>
+
 
 
 
@@ -124,18 +130,21 @@
 
     <!-- create an event section -->
     <!-- create an event button -->
+
     <button type="button" name="button" id="openFormButton" onclick="openForm()">CREATE AN EVENT</button>
+    <button type="button" name="button" id="openFormButton" onclick="logout()">LOG OUT</button>
+
 
     <div id="create" class="page">
       <div class="create_div">
         <button onclick="closeIcon()" class="close_icon"><i class="fas fa-times"></i></button>
         <h1 class="create_header">CREATE AN EVENT</h1>
       </div>
-      <form>
+      <form id="myForm">
         <input type="text" id="name" placeholder="NAME OF THE EVENT" required>
-        <div class="create_div">
-          <p class="create_category">CHOOSE CATEGORY</p>
-          <select id="categories" name="categories" aria-placeholder="CHOOSE CATEGORY">
+        <div class="create_div2">
+          <select id="categories" name="categories">
+            <option value="hidden" class=categ">CHOOSE CATEGORY</option>
             <option value="music" class="categ">Music</option>
             <option value="party" class="categ">Party</option>
             <option value="sport" class="categ">Sport</option>
@@ -154,18 +163,20 @@
         </div>
         <input type="text" id="location" placeholder="ADDRESS" required>
         <input type="date" id="date" required>
-        <div class="create_div"><input type="number" id="price" placeholder="PRICE" required>
-          <p class="create_price">kr</p>
-        </div>
-        <div class="create_div">
-          <p class="create_free">FREE</p><input type="checkbox" id="free" required>
+        <div class="price_free">
+          <div class="create_div3"><input type="number" id="price" placeholder="PRICE" required>
+            <p class="create_price">kr</p>
+          </div>
+          <div class="create_div3 div4">
+            <p class="create_free">FREE</p><input type="checkbox" id="free" required>
+          </div>
         </div>
 
         <input type="text" id="description" placeholder="Write the description" required>
 
         <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
         <img id="imagePreview" class="image-preview">
-        <button type="button" name="button" onclick="createAnEvent()">Add Event</button>
+        <button type="button" name="button" class="create_button" onclick="createAnEvent()">Add Event</button>
 
       </form>
     </div>
@@ -174,20 +185,7 @@
 
 
 
-  <section id="create" class="page">
-    <header class="topbar">
-      <a class="left" href="#home">Back</a>
-      <h2>Create user</h2>
-      <a class="right" onclick="createUser()">Save</a>
-    </header>
-    <form>
-      <input type="text" id="name" placeholder="Type your name" required>
-      <input type="email" id="mail" placeholder="Type your mail" required>
-      <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
-      <img id="imagePreview" class="image-preview">
-      <button type="button" name="button" onclick="createUser()">Save User</button>
-    </form>
-  </section>
+
 
   <!-- loader  -->
   <div id="loader">
@@ -206,6 +204,7 @@
   <script src="js/login.js"></script>
   <script src="js/events.js"></script>
   <script src="js/underline.js"></script>
+  <script src="js/profile.js"></script>
 
 </body>
 

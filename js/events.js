@@ -1,6 +1,10 @@
 "use strict";
 
 const _eventRef = _db.collection("Events");
+let _selectedImgFile = "";
+
+
+
 
 function orderByUpcoming() {
     _eventRef.orderBy("date").onSnapshot(function (snapshotData) {
@@ -66,23 +70,8 @@ function appendEvents(events) {
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // create new event
 // add a new event to firestore 
-
-
 
 function createAnEvent() {
 
@@ -98,22 +87,36 @@ function createAnEvent() {
         description: descriptionInput.value,
         img: imageInput.src,
         price: priceInput.value,
-        price: freeInput.value = "0",
+        price: freeInput.value = "FREE",
         category: categoriesInput.value
     };
     _eventRef.add(newEvent);
     document.getElementById("create").style.display = "none";
+    document.getElementById("myForm").reset();
 
 }
 
 //////////SEARCHBAR FUNCIONALITY
 function search(searchValue) {
-    searchValue = searchValue.toLowerCase();
-    let filteredMovies = events.filter(event => event.title.rendered.toLowerCase().includes(searchValue));
-   
-    console.log(filteredEvents);
-    appendMovies(filteredEvents);
-}
+    _eventRef.onSnapshot(function (snapshotData) {
+        let events = [];
+        snapshotData.forEach(function (doc) {
+            let event = doc.data();
+            event.id = doc.id;
+            events.push(event);
+        });
+
+        searchValue = searchValue.toLowerCase();
+        let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
+
+        console.log(filteredEvents);
+
+
+    });
+};
+
+
+
 
 
 function previewImage(file, previewId) {
@@ -141,6 +144,27 @@ function closeIcon() {
 
 
 
+// appearing created events in the profile
+
+function init() {
+    // init user data and favourite movies
+    _userRef.doc(_currentUser.uid).onSnapshot({
+        includeMetadataChanges: true
+    }, function (userData) {
+        if (!userData.metadata.hasPendingWrites && userData.data()) {
+            _currentUser = {
+                ...firebase.auth().currentUser,
+                ...userData.data()
+            }; //concating two objects: authUser object and userData objec from the db
+            appendUserData();
+            appendFavMovies(_currentUser.favMovies);
+            if (_movies) {
+                appendMovies(_movies); // refresh movies when user data changes
+            }
+            showLoader(false);
+        }
+    });
+}
 
 
 
