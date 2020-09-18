@@ -25,9 +25,11 @@ function userAuthenticated(user) {
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
 
 
-    document.getElementById("profile-container").innerHTML =  user.displayName + user.photoURL;
-};
+    document.getElementById("profile-container").innerHTML =  user.displayName;
+    
+    document.getElementById("profilepic").innerHTML =  user.photoURL;
 
+}
 
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
