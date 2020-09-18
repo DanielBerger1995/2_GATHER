@@ -35,6 +35,7 @@ function orderByLocation() {
 function orderByFriends() {
     _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
         let events = [];
+        let user = [];
         snapshotData.forEach(function (doc) {
             let event = doc.data();
             event.id = doc.id;
@@ -43,6 +44,7 @@ function orderByFriends() {
         appendEvents(events);
     });
 }
+
 
 // append events to the DOM
 function appendEvents(events) {
@@ -66,6 +68,7 @@ function appendEvents(events) {
         </article>
         `;
     }
+
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
     
 }
@@ -110,8 +113,7 @@ function search(searchValue) {
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
         console.log(filteredEvents);
-
-
+        
     });
 };
 

@@ -24,11 +24,6 @@ function userAuthenticated(user) {
 }
 
 
-
-
-
-
-
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
     hideTabbar(true);
@@ -48,6 +43,15 @@ function userNotAuthenticated() {
     ui.start('#firebaseui-auth-container', uiConfig);
     showLoader(false);
 }
+
+// ========== PROFILE PAGE FUNCTIONALITY ========== //
+// append user data to profile page
+function appendUserData() {
+    document.querySelector('#username').value = _currentUser.displayName;
+    document.querySelector('#mail').value = _currentUser.email;
+   
+}
+  
 
 // show and hide tabbar
 function hideTabbar(hide) {
@@ -95,5 +99,6 @@ function init() {
             }
             showLoader(false);
         }
+        
     });
 }
