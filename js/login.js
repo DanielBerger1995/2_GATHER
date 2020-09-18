@@ -25,8 +25,8 @@ function userAuthenticated(user) {
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
 
 
-    document.getElementById("profile-container").innerHTML =  user.displayName + user.
-}
+    document.getElementById("profile-container").innerHTML =  user.displayName;
+};
 
 
 function userNotAuthenticated() {
