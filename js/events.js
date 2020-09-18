@@ -63,11 +63,11 @@ function appendEvents(events) {
             </div>
             <h7 clas="event_price">${event.price}</h7>
         </div>
-        
         </article>
         `;
     }
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
+    
 }
 
 // create new event
@@ -141,7 +141,9 @@ function closeIcon() {
     document.getElementById("create").style.display = "none";
 }
 
-
+function showMe() {
+    document.querySelector("#party").innerHTML = "HALLOWEEN PARTY";
+}
 
 
 // appearing created events in the profile

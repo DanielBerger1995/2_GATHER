@@ -151,7 +151,7 @@ h2 {
 }
 
 /* login page styling */
-.login-button {
+button {
   text-align: center;
   padding: 12px 15px;
   width: 100%;
@@ -177,7 +177,7 @@ h2 {
   font-size: 16px;
 }
 
-.login-input {
+input {
   margin: 1em auto;
   width: 100%;
   max-width: 300px;
@@ -606,9 +606,30 @@ input {
     margin-top: 25vh;
 }
 
+/*TICKETS PAGE*/
 
+.ticket-events {
+  text-align: center;
+  padding: 12px 15px;
+  width: 100%;
+  max-width: 300px;
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 75px;
+}
 
-
+.svg-text {
+  fill: black;
+  font-family: 'Rift', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+	position: relative;
+}
 
 /* NAV BAR */
 .nav {
