@@ -42,6 +42,7 @@ function orderByFriends() {
             events.push(event);
         });
         appendEvents(events);
+        
     });
 }
 
@@ -114,6 +115,7 @@ function search(searchValue) {
 
         console.log(filteredEvents);
         
+        
     });
 };
 
@@ -148,27 +150,7 @@ function showMe() {
 }
 
 
-// appearing created events in the profile
 
-function init() {
-    // init user data and favourite movies
-    _userRef.doc(_currentUser.uid).onSnapshot({
-        includeMetadataChanges: true
-    }, function (userData) {
-        if (!userData.metadata.hasPendingWrites && userData.data()) {
-            _currentUser = {
-                ...firebase.auth().currentUser,
-                ...userData.data()
-            }; //concating two objects: authUser object and userData objec from the db
-            appendUserData();
-            appendFavMovies(_currentUser.favMovies);
-            if (_movies) {
-                appendMovies(_movies); // refresh movies when user data changes
-            }
-            showLoader(false);
-        }
-    });
-}
 
 
 

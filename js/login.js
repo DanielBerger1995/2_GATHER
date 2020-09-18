@@ -17,10 +17,15 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 function userAuthenticated(user) {
     _currentUser = user;
-    console.log(user.displayName);
+    console.log(user);
     hideTabbar(false);
     init();
     showLoader(false);
+
+    document.getElementById("hello").innerHTML = "Hi " + user.displayName;
+
+
+    document.getElementById("profile-container").innerHTML =  user.displayName + user.
 }
 
 
@@ -49,8 +54,9 @@ function userNotAuthenticated() {
 function appendUserData() {
     document.querySelector('#username').value = _currentUser.displayName;
     document.querySelector('#mail').value = _currentUser.email;
-   
+    console.log(user.displayName);
 }
+
   
 
 // show and hide tabbar
@@ -84,7 +90,7 @@ function logout() {
 
 function init() {
     // init user data and favourite movies
-    _userRef.doc(_currentUser.uid).onSnapshot({
+    eventRef.doc(_currentUser.uid).onSnapshot({
         includeMetadataChanges: true
     }, function (userData) {
         if (!userData.metadata.hasPendingWrites && userData.data()) {
@@ -93,11 +99,6 @@ function init() {
                 ...userData.data()
             }; //concating two objects: authUser object and userData objec from the db
             appendUserData();
-            appendFavMovies(_currentUser.favMovies);
-            if (_movies) {
-                appendMovies(_movies); // refresh movies when user data changes
-            }
-            showLoader(false);
         }
         
     });
