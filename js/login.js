@@ -23,13 +23,13 @@ function userAuthenticated(user) {
     showLoader(false);
 
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
-
-
     document.getElementById("profile-container").innerHTML =  user.displayName;
-    
-    document.getElementById("profilepic").innerHTML =  user.photoURL;
 
+
+    document.getElementById("profile-container").src =  user.photoURL;
+    
 }
+
 
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
@@ -57,6 +57,7 @@ function appendUserData() {
     document.querySelector('#username').value = _currentUser.displayName;
     document.querySelector('#mail').value = _currentUser.email;
     console.log(user.displayName);
+
 }
 
   
