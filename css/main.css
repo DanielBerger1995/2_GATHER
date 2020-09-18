@@ -81,13 +81,15 @@ h2 {
   animation: fadeIn 0.4s;
   /* padding equals height of tabbar and topbar */
   padding: 30px 0;
+  margin-bottom: 60px;
 }
 
 /* ---------- logo styling ---------- */
 .logo {
-  margin: 2em auto;
+  margin: auto;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
+  margin: 100px 0 200px 0;
 }
 
 /* ---------- animations ---------- */

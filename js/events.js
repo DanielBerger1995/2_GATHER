@@ -35,14 +35,17 @@ function orderByLocation() {
 function orderByFriends() {
     _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
         let events = [];
+        let user = [];
         snapshotData.forEach(function (doc) {
             let event = doc.data();
             event.id = doc.id;
             events.push(event);
         });
         appendEvents(events);
+        
     });
 }
+
 
 // append events to the DOM
 function appendEvents(events) {
@@ -66,6 +69,7 @@ function appendEvents(events) {
         </article>
         `;
     }
+
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
     
 }
@@ -110,8 +114,8 @@ function search(searchValue) {
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
         console.log(filteredEvents);
-
-
+        
+        
     });
 };
 
@@ -146,27 +150,7 @@ function showMe() {
 }
 
 
-// appearing created events in the profile
 
-function init() {
-    // init user data and favourite movies
-    _userRef.doc(_currentUser.uid).onSnapshot({
-        includeMetadataChanges: true
-    }, function (userData) {
-        if (!userData.metadata.hasPendingWrites && userData.data()) {
-            _currentUser = {
-                ...firebase.auth().currentUser,
-                ...userData.data()
-            }; //concating two objects: authUser object and userData objec from the db
-            appendUserData();
-            appendFavMovies(_currentUser.favMovies);
-            if (_movies) {
-                appendMovies(_movies); // refresh movies when user data changes
-            }
-            showLoader(false);
-        }
-    });
-}
 
 
 
