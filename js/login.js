@@ -19,23 +19,24 @@ function userAuthenticated(user) {
     _currentUser = user;
     console.log(user);
     hideTabbar(false);
+    goHome();
     init();
     showLoader(false);
-
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
     document.getElementById("profile-container").innerHTML =  user.displayName;
-
 
     document.getElementById("profile-container").src =  user.photoURL;
     
 }
 
+function goHome() {
+    navigateTo("home")
+};
 
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
     hideTabbar(true);
     showPage("login");
-
     // Firebase UI configuration
     const uiConfig = {
         credentialHelper: firebaseui.auth.CredentialHelper.NONE,
@@ -43,7 +44,7 @@ function userNotAuthenticated() {
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
-        signInSuccessUrl: '#home'
+        signInSuccessUrl: '#search'
     };
     // Init Firebase UI Authentication
     const ui = new firebaseui.auth.AuthUI(firebase.auth());
