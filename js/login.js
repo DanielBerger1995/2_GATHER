@@ -23,12 +23,6 @@ function userAuthenticated(user) {
     showLoader(false);
 }
 
-
-
-
-
-
-
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
     hideTabbar(true);
