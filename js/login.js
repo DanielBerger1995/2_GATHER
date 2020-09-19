@@ -23,10 +23,10 @@ function userAuthenticated(user) {
     init();
     showLoader(false);
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
-    document.getElementById("profile-container").innerHTML =  user.displayName;
+    document.getElementById("profile-container").innerHTML = user.displayName;
 
-    document.getElementById("profile-container").src =  user.photoURL;
-    
+    document.getElementById("profile-container").src = user.photoURL;
+
 }
 
 function goHome() {
@@ -65,7 +65,7 @@ function appendUserData() {
 
 }
 
-  
+
 
 // show and hide tabbar
 function hideTabbar(hide) {
@@ -108,6 +108,6 @@ function init() {
             }; //concating two objects: authUser object and userData objec from the db
             appendUserData();
         }
-        
+
     });
 }

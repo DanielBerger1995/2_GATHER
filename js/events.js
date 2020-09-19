@@ -181,6 +181,8 @@ function openMusic(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "Music";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openParty(value) {
@@ -202,6 +204,8 @@ function openParty(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "Party";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openSport(value) {
@@ -223,6 +227,8 @@ function openSport(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "Sport";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openArt(value) {
@@ -244,6 +250,8 @@ function openArt(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "Art";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openGames(value) {
@@ -265,6 +273,8 @@ function openGames(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "games";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openFood(value) {
@@ -286,6 +296,8 @@ function openFood(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "food";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openTechnology(value) {
@@ -307,6 +319,8 @@ function openTechnology(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "technology";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openCulture(value) {
@@ -328,6 +342,8 @@ function openCulture(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "culture";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openEducation(value) {
@@ -349,6 +365,8 @@ function openEducation(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "education";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openLiterature(value) {
@@ -370,6 +388,8 @@ function openLiterature(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "literature";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openShopping(value) {
@@ -391,6 +411,8 @@ function openShopping(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "Shopping";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openSightseeing(value) {
@@ -412,6 +434,8 @@ function openSightseeing(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "sightseeing";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openMovies(value) {
@@ -433,6 +457,8 @@ function openMovies(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "movies";
+    document.getElementById("filtered-events").style.display = "block";
+
 };
 
 function openEnvironment(value) {
@@ -454,7 +480,9 @@ function openEnvironment(value) {
     document.getElementById("searchbar").style.display = "none";
     document.getElementById("closeCatBut").style.display = "block";
     document.getElementById("closeCatBut").innerHTML = "&#10005;" + "&emsp;" + "environment";
+    document.getElementById("filtered-events").style.display = "block";
 };
+
 
 
 function appendCategories(filteredEvents) {
@@ -480,7 +508,6 @@ function appendCategories(filteredEvents) {
     document.querySelector('#filtered-events').innerHTML = htmlTemplate;
 
 }
-
 
 function closeFilteredCategories() {
     document.getElementById("filtered-events").style.display = "none";
