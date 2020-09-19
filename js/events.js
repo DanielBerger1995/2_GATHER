@@ -42,7 +42,7 @@ function orderByFriends() {
             events.push(event);
         });
         appendEvents(events);
-        
+
     });
 }
 
@@ -114,8 +114,8 @@ function search(searchValue) {
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
         console.log(filteredEvents);
-        
-        
+
+
     });
 };
 
@@ -487,5 +487,4 @@ function closeFilteredCategories() {
     document.getElementById("categories-container").style.display = "grid";
     document.getElementById("searchbar").style.display = "block";
     document.getElementById("closeCatBut").style.display = "none";
-    window.location.reload();
 }
