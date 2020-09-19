@@ -50,6 +50,13 @@ function userNotAuthenticated() {
     showLoader(false);
 }
 
+//=== sign out user ===//
+function logout() {
+    firebase.auth().signOut();
+}
+
+// ===== TABBAR NAVIGATION ====//
+
 //=== show and hide tabbar ===//
 function hideTabbar(hide) {
     let tabbar = document.querySelector('#tabbar');
@@ -58,11 +65,6 @@ function hideTabbar(hide) {
     } else {
         tabbar.classList.remove("hide");
     }
-}
-
-//=== sign out user ===//
-function logout() {
-    firebase.auth().signOut();
 }
 
 //=== Init function for whole SPA ===//
