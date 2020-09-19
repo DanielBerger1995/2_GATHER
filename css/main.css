@@ -969,8 +969,11 @@ h3 {
 }
 
 
-
-
 #closeCatBut {
   display: none;
+  width: 120px;
+  margin-top: 20px;
+  margin-left: 1.3em;
+  padding: 8px;
+
 }

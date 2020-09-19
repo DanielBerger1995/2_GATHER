@@ -19,7 +19,6 @@ function userAuthenticated(user) {
     _currentUser = user;
     console.log(user);
     hideTabbar(false);
-    goHome();
     init();
     showLoader(false);
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
@@ -28,10 +27,6 @@ function userAuthenticated(user) {
     document.getElementById("profile-container").src = user.photoURL;
 
 }
-
-function goHome() {
-    navigateTo("home")
-};
 
 
 
