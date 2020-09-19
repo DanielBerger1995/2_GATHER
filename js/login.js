@@ -33,6 +33,10 @@ function goHome() {
     navigateTo("home")
 };
 
+
+
+
+
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
     hideTabbar(true);

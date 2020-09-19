@@ -745,60 +745,232 @@ h3 {
 
 .icon1 {
   background-color:#D89E20;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+
 }
 
 .icon2 {
   background-color: #0A9C77;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon3 {
   background-color: #2CAEC6;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon4 {
   background-color: #CC3B26;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon5 {
   background-color: #D47D22;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon6 {
   background-color: #479BAB;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon7 {
   background-color:#067354;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon8 {
   background-color:#AC4B34;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon9 {
   background-color:#49ABAA;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon10 {
   background-color:#CC6E26;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon11 {
   background-color:#9FA357;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon12 {
   background-color:#E0C1A4;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon13 {
   background-color:#8A4E35;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 .icon14 {
   background-color:#A8D4C7;
+  margin: 0;
+  border: none;
+  color: white;
+  display: flex;
+  font-size: 20px;
+  height: 120px;
+  width: 144px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
 }
 
 
 
 
+#closeCatBut {
+  display: none;
+}

@@ -50,21 +50,27 @@
       <h2>Events categories</h2>
     </div>
     <input id="searchbar" type="search" placeholder="Search" onkeyup="search(this.value)">
+    <button onclick="closeFilteredCategories()" id="closeCatBut"></button>
+    <div id="filtered-events" class="grid-container"></div>
     <div id="categories-container">
-      <h3 class="icon1"><i class="cat_icon fas fa-music"></i>Music</h3>
-      <h3 class="icon2"><i class="cat_icon fas fa-glass-cheers"></i>Party</h3>
-      <h3 class="icon3"><i class="cat_icon fas fa-running"></i>Sport</h3>
-      <h3 class="icon4"><i class="cat_icon fas fa-palette"></i>Art</h3>
-      <h3 class="icon5"><i class="cat_icon fas fa-gamepad"></i>Games</h3>
-      <h3 class="icon6"><i class="cat_icon fas fa-utensils"></i>Food</h3>
-      <h3 class="icon7"><i class="cat_icon fas fa-lightbulb"></i>Technology</h3>
-      <h3 class="icon8"><i class="cat_icon fas fa-theater-masks"></i>Culture</h3>
-      <h3 class="icon9"><i class="cat_icon fas fa-graduation-cap"></i>Education</h3>
-      <h3 class="icon10"><i class="cat_icon fas fa-book"></i>Literature</h3>
-      <h3 class="icon11"><i class="cat_icon fas fa-shopping-cart"></i>Shopping</h3>
-      <h3 class="icon12"><i class="cat_icon fas fa-archway"></i>Sightseeing</h3>
-      <h3 class="icon13"><i class="cat_icon fas fa-video"></i>Movies</h3>
-      <h3 class="icon14"><i class="cat_icon fas fa-seedling"></i>Enviroment</h3>
+      <button class="icon1" onclick="openMusic(value)"><i class="cat_icon fas fa-music"></i>Music</button>
+      <button class="icon2" onclick="openParty(value)"><i class="cat_icon fas fa-glass-cheers"></i>Party</button>
+      <button class="icon3" onclick="openSport(value)"><i class="cat_icon fas fa-running"></i>Sport</button>
+      <button class="icon4" onclick="openArt(value)"><i class="cat_icon fas fa-palette"></i>Art</button>
+      <button class="icon5" onclick="openGames(value)"><i class="cat_icon fas fa-gamepad"></i>Games</button>
+      <button class="icon6" onclick="openFood(value)"><i class="cat_icon fas fa-utensils"></i>Food</button>
+      <button class="icon7" onclick="openTechnology(value)"><i class="cat_icon fas fa-lightbulb"></i>Technology</button>
+      <button class="icon8" onclick="openCulture(value)"><i class="cat_icon fas fa-theater-masks"></i>Culture</button>
+      <button class="icon9" onclick="openEducation(value)"><i
+          class="cat_icon fas fa-graduation-cap"></i>Education</button>
+      <button class="icon10" onclick="openLiterature(value)"><i class="cat_icon fas fa-book"></i>Literature</button>
+      <button class="icon11" onclick="openShopping(value)"><i
+          class="cat_icon fas fa-shopping-cart"></i>Shopping</button>
+      <button class="icon12" onclick="openSightseeing(value)"><i
+          class="cat_icon fas fa-archway"></i>Sightseeing</button>
+      <button class="icon13" onclick="openMovies(value)"><i class="cat_icon fas fa-video"></i>Movies</button>
+      <button class="icon14" onclick="openEnvironment(value)"><i
+          class="cat_icon fas fa-seedling"></i>Environment</button>
     </div>
   </section>
 
@@ -82,18 +88,31 @@
 
   </section>
 
-<!-- tickets section -->
+  <!-- tickets section -->
   <section id="tickets" class="page">
 
     <!-- SVG FOR TICKET-->
     <div class="ticket-container" id="tickets-container">
-    <svg class="ticket-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="351" height="180" viewBox="0 0 351 180"><defs><filter id="a" x="0" y="0" width="351" height="180" filterUnits="userSpaceOnUse"><feOffset dx="3" dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="3" result="b"/><feFlood flood-opacity="0.161"/><feComposite operator="in" in2="b"/><feComposite in="SourceGraphic"/></filter></defs><g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#a)">
-      <path d="M-2068-1206h-138a11.921,11.921,0,0,1-8.485-3.515A11.921,11.921,0,0,1-2218-1218v-82.393c.087,0,.18.006.279.006,5.083,0,9.218-5.589,9.218-12.46s-4.135-12.459-9.218-12.459c-.092,0-.186,0-.279.006V-1527a11.921,11.921,0,0,1,3.515-8.485A11.921,11.921,0,0,1-2206-1539h138a11.922,11.922,0,0,1,8.486,3.515A11.921,11.921,0,0,1-2056-1527v201.7a8.3,8.3,0,0,0-6.33,3.768,14.942,14.942,0,0,0-2.608,8.685,14.943,14.943,0,0,0,2.608,8.686,8.3,8.3,0,0,0,6.33,3.768V-1218a11.921,11.921,0,0,1-3.515,8.485A11.922,11.922,0,0,1-2068-1206Z" 
-      transform="translate(1545 -2050) rotate(-90)" fill="#f4f4f4"/></g>
-      <text class="svg-text" x="80" y="35" dominant-baseline="middle" text-anchor="middle">HALLOWEEN PARTY</text>
-      <text class="svg-text" x="35" y="65" dominant-baseline="middle" text-anchor="middle">sept</text>
-      <text class="svg-text" x="35" y="90" dominant-baseline="middle" text-anchor="middle">7</text>
-    </svg>
+      <svg class="ticket-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="351"
+        height="180" viewBox="0 0 351 180">
+        <defs>
+          <filter id="a" x="0" y="0" width="351" height="180" filterUnits="userSpaceOnUse">
+            <feOffset dx="3" dy="3" input="SourceAlpha" />
+            <feGaussianBlur stdDeviation="3" result="b" />
+            <feFlood flood-opacity="0.161" />
+            <feComposite operator="in" in2="b" />
+            <feComposite in="SourceGraphic" />
+          </filter>
+        </defs>
+        <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#a)">
+          <path
+            d="M-2068-1206h-138a11.921,11.921,0,0,1-8.485-3.515A11.921,11.921,0,0,1-2218-1218v-82.393c.087,0,.18.006.279.006,5.083,0,9.218-5.589,9.218-12.46s-4.135-12.459-9.218-12.459c-.092,0-.186,0-.279.006V-1527a11.921,11.921,0,0,1,3.515-8.485A11.921,11.921,0,0,1-2206-1539h138a11.922,11.922,0,0,1,8.486,3.515A11.921,11.921,0,0,1-2056-1527v201.7a8.3,8.3,0,0,0-6.33,3.768,14.942,14.942,0,0,0-2.608,8.685,14.943,14.943,0,0,0,2.608,8.686,8.3,8.3,0,0,0,6.33,3.768V-1218a11.921,11.921,0,0,1-3.515,8.485A11.922,11.922,0,0,1-2068-1206Z"
+            transform="translate(1545 -2050) rotate(-90)" fill="#f4f4f4" />
+        </g>
+        <text class="svg-text" x="80" y="35" dominant-baseline="middle" text-anchor="middle">HALLOWEEN PARTY</text>
+        <text class="svg-text" x="35" y="65" dominant-baseline="middle" text-anchor="middle">sept</text>
+        <text class="svg-text" x="35" y="90" dominant-baseline="middle" text-anchor="middle">7</text>
+      </svg>
     </div>
     <!-- <button type="button" name="button" onclick="showMe()" class="ticket-events">Does it work?</button> -->
   </section>
@@ -140,8 +159,6 @@
     <!-- create an event button -->
 
     <button type="button" name="button" id="openFormButton" onclick="openForm()">CREATE AN EVENT</button>
-    <button type="button" name="button" id="openFormButton" onclick="logout()">LOG OUT</button>
-
 
     <div id="create" class="page">
       <div class="create_div">
@@ -191,22 +208,6 @@
 
   </section>
 
-
-
-  <section id="create" class="page">
-    <header class="topbar">
-      <a class="left" href="#home">Back</a>
-      <h2>Create user</h2>
-      <a class="right" onclick="createUser()">Save</a>
-    </header>
-    <form>
-      <input type="text" id="name" placeholder="Type your name" required>
-      <input type="email" id="mail" placeholder="Type your mail" required>
-      <input type="file" id="img" accept="image/*" onchange="previewImage(this.files[0], 'imagePreview')">
-      <img id="imagePreview" class="image-preview">
-      <button type="button" name="button" onclick="createUser()">Save User</button>
-    </form>
-  </section>
 
 
   <!-- loader  -->
