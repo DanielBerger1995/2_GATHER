@@ -72,6 +72,7 @@ function appendEvents(events) {
 
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
 
+
 }
 
 // create new event
@@ -100,6 +101,10 @@ function createAnEvent() {
 
 }
 
+function hideCategories() {
+    document.getElementById("#categories-container").style.display = "none";
+}
+
 //////////SEARCHBAR FUNCIONALITY/////////
 function search(searchValue) {
     _eventRef.onSnapshot(function (snapshotData) {
@@ -114,16 +119,25 @@ function search(searchValue) {
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
         console.log(filteredEvents); 
+        
         appendCategories(filteredEvents);
 
+        
         /* searchbar appending searched events*/
         var search_input = document.getElementById('searchbar');
 
         if (search_input.value.length == 0) {
             closeFilteredCategories()
+            
+        } else {
+            document.getElementById("filtered-events").style.display = "block";
+            document.getElementById("categories-container").style.display = "none";
         };
+        
     });
 };
+
+
 
 
 function previewImage(file, previewId) {
@@ -506,3 +520,4 @@ function closeFilteredCategories() {
     document.getElementById("searchbar").style.display = "block";
     document.getElementById("closeCatBut").style.display = "none";
 }
+

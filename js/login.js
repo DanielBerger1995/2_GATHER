@@ -28,7 +28,8 @@ function userAuthenticated(user) {
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
     document.getElementById("hello_user").innerHTML = 
     `<h2>${user.displayName}</h2>
-    <img src="${user.photoURL}">
+    <img src="https://graph.facebook.com/${user.providerData.uid}?fields=picture.width(720).height(720)&redirect=false
+    ">
     <br>
     <h4>E-mail:</h4> 
     ${user.email}`;
