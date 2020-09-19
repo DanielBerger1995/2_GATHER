@@ -5,6 +5,7 @@ const eventRef = _db.collection("Events");
 const _userRef = _db.collection("users")
 let _currentUser;
 let _movies;
+
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
 firebase.auth().onAuthStateChanged(function (user) {
@@ -15,23 +16,21 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
+// === Authenticated user SPA behaviour ==== //
 function userAuthenticated(user) {
     _currentUser = user;
     console.log(user);
     hideTabbar(false);
     init();
     showLoader(false);
+
+    // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
-    document.getElementById("profile-container").innerHTML = user.displayName;
-
-    document.getElementById("profile-container").src = user.photoURL;
-
+    document.getElementById("hello_user").innerHTML = user.displayName;
 }
 
 
-
-
-
+//=== New user authentication through email and FB ===/
 function userNotAuthenticated() {
     _currentUser = null; // reset _currentUser
     hideTabbar(true);
@@ -51,18 +50,7 @@ function userNotAuthenticated() {
     showLoader(false);
 }
 
-// ========== PROFILE PAGE FUNCTIONALITY ========== //
-// append user data to profile page
-function appendUserData() {
-    document.querySelector('#username').value = _currentUser.displayName;
-    document.querySelector('#mail').value = _currentUser.email;
-    console.log(user.displayName);
-
-}
-
-
-
-// show and hide tabbar
+//=== show and hide tabbar ===//
 function hideTabbar(hide) {
     let tabbar = document.querySelector('#tabbar');
     if (hide) {
@@ -72,25 +60,12 @@ function hideTabbar(hide) {
     }
 }
 
-// sign out user
+//=== sign out user ===//
 function logout() {
     firebase.auth().signOut();
 }
 
-// ========== PROFILE PAGE FUNCTIONALITY ========== //
-// append user data to profile page
-
-
-// update user data - auth user and database object
-
-// update auth user
-
-
-// update database user
-
-
-
-
+//=== Init function for whole SPA ===//
 function init() {
     // init user data and favourite movies
     eventRef.doc(_currentUser.uid).onSnapshot({

@@ -30,7 +30,7 @@
   <!-- home page -->
   <section id="home" class="page">
     <header class="topbar">
-      <h2>Hi User!</h2>
+      <h2 id="hello"></h2>
       <p>These are the newest Events<br>you may be interested in:</p>
       <nav class="nav">
         <a href="#" class="nav-item is-active" active-color="black" onclick="orderByUpcoming()">UPCOMING</a>
@@ -80,6 +80,7 @@
       <!-- <h2>Login</h2> -->
     </header>
     <!-- firebase auth container  -->
+    <img id="logo" class="logo" src="img/ourlogo.png">
     <section id="firebaseui-auth-container"></section>
   </section>
 
@@ -116,33 +117,25 @@
     <!-- <button type="button" name="button" onclick="showMe()" class="ticket-events">Does it work?</button> -->
   </section>
 
-
-
   <!-- user profile section  -->
   <section id="userprofile" class="page">
-
-
     <!-- user container  -->
     <div id="profile-container">
-
+      
       <button class="set_icon" onclick="openSettings()"><i class="fas fa-cog"></i></button>
-
-
-
+      <div id="hello_user"></div>
       <section id="settings" class="page">
         <div class="create_div">
           <button class="back_button" onclick="closeSettings()"><i class="fas fa-chevron-left"></i></button>
           <h1 class="create_header">SETTINGS</h1>
         </div>
-
         <div class="button_div">
           <div>
             <button class="settButton" onclick="">PRIVACY<span><i class="fas fa-chevron-right"></i></span></button>
             <button class="settButton" onclick="">Notifications<span><i
                   class="fas fa-chevron-right"></i></span></button>
             <button class="settButton" onclick="">payment<span><i class="fas fa-chevron-right"></i></span></button>
-            <button class="settButton" onclick="">edit chosen categories<span><i
-                  class="fas fa-chevron-right"></i></span></button>
+            <button class="settButton" onclick="">edit chosen categories<span><iclass="fas fa-chevron-right"></i></span></button>
           </div>
           <button type="button" name="button" class="log_out" onclick="logout()">LOG OUT</button>
         </div>
