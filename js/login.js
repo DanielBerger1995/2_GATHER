@@ -26,7 +26,12 @@ function userAuthenticated(user) {
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
-    document.getElementById("hello_user").innerHTML = user.displayName;
+    document.getElementById("hello_user").innerHTML = 
+    `<h2>${user.displayName}</h2>
+    <img src="${user.photoURL}">
+    <br>
+    <h4>E-mail:</h4> 
+    ${user.email}`;
 }
 
 

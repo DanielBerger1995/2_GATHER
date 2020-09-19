@@ -100,7 +100,7 @@ function createAnEvent() {
 
 }
 
-//////////SEARCHBAR FUNCIONALITY
+//////////SEARCHBAR FUNCIONALITY/////////
 function search(searchValue) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
@@ -113,14 +113,17 @@ function search(searchValue) {
         searchValue = searchValue.toLowerCase();
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
-        console.log(filteredEvents);
+        console.log(filteredEvents); 
+        appendCategories(filteredEvents);
 
+        /* searchbar appending searched events*/
+        var search_input = document.getElementById('searchbar');
 
+        if (search_input.value.length == 0) {
+            closeFilteredCategories()
+        };
     });
 };
-
-
-
 
 
 function previewImage(file, previewId) {
@@ -134,8 +137,8 @@ function previewImage(file, previewId) {
     }
 }
 
-// button to open the form
 
+// button to open the form
 function openForm() {
     document.getElementById("create").style.display = "block";
 }
@@ -148,18 +151,6 @@ function closeIcon() {
 function showMe() {
     document.querySelector("#party").innerHTML = "HALLOWEEN PARTY";
 }
-
-
-
-
-
-
-
-// filter categories
-
-// fetch all genres / categories from WP
-
-
 
 
 function openMusic(value) {
