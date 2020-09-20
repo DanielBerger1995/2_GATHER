@@ -23,11 +23,11 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-   
+
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
-    document.getElementById("hello_user").innerHTML = 
-    `<h2>${user.displayName}</h2>
+    document.getElementById("hello_user").innerHTML =
+        `<h2>${user.displayName}</h2>
     <img src="https://graph.facebook.com/${user.providerData.uid}?fields=picture.width(720).height(720)&redirect=false
     ">
     <br>
