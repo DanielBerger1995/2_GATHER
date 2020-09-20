@@ -53,7 +53,7 @@ function appendEvents(events) {
     for (let event of events) {
         console.log(event);
         htmlTemplate += `
-        <article>
+        <a href="#select-event" onclick="selectUser('${event.id}','${event.name}', '${event.place}', '${event.img}')"><article>
         <img src="${event.img}">
         <div class="padding">
         <div class= "event_date"
@@ -66,11 +66,27 @@ function appendEvents(events) {
             </div>
             <h7 clas="event_price">${event.price}</h7>
         </div>
-        </article>
+        </article></a>
         `;
     }
 
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
+
+
+}
+
+// select specific event
+window.selectUser = (id, name, place, img) => {
+    console.log(id, name, place);
+    // references to the input fields
+    let nameInput = document.querySelector('#name-update');
+    let placeInput = document.querySelector('#place-update');
+    let imageInput = document.querySelector('#imagePreviewUpdate');
+    nameInput.value = name;
+    placeInput.value = place;
+    imageInput.src = img;
+    _selectedUserId = id;
+    _spaService.navigateTo("select-event");
 
 
 }
