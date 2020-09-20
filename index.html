@@ -93,6 +93,12 @@
   <!----------------------- CALENDAR PAGE --------------------->
   <section id="calendar" class="page">
 
+     <!--Add buttons to initiate auth sequence and sign out-->
+     <button id="authorize_button" style="display: none;">Authorize</button>
+     <button id="signout_button" style="display: none;">Sign Out</button>
+ 
+     <pre id="content" style="white-space: pre-wrap;"></pre>
+
   </section>
 
 
@@ -241,6 +247,11 @@
   <script src="js/events.js"></script>
   <script src="js/underline.js"></script>
   <script src="js/profile.js"></script>
+  <script src="js/calendar.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
 </body>
 
 </html>

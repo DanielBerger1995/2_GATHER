@@ -212,6 +212,7 @@ function previewImage(file, previewId) {
 // button to open the form
 function openForm() {
     document.getElementById("create").style.display = "block";
+    document.getElementById("my-events-section").style.display = "none";
 }
 
 
