@@ -86,6 +86,7 @@ function createAnEvent() {
     let priceInput = document.querySelector('#price');
     let freeInput = document.querySelector('#free');
     let categoriesInput = document.querySelector('#categories');
+    let user = _currentUser;
 
     let newEvent = {
         name: nameInput.value,
@@ -93,13 +94,69 @@ function createAnEvent() {
         img: imageInput.src,
         price: priceInput.value,
         price: freeInput.value = "FREE",
-        category: categoriesInput.value
+        category: categoriesInput.value,
+        organiser: user.displayName
     };
     _eventRef.add(newEvent);
     document.getElementById("create").style.display = "none";
     document.getElementById("myForm").reset();
 
 }
+
+// add a new event to the profile page
+function hostedEvents(value) {
+    _eventRef.onSnapshot(function (snapshotData) {
+        let events = [];
+        snapshotData.forEach(function (doc) {
+            let event = doc.data();
+            event.id = doc.id;
+            events.push(event);
+        });
+
+        let user = _currentUser;
+
+        value = user.displayName;
+        let myEvents = events.filter(event => event.organiser.includes(value));
+
+        console.log(myEvents);
+        appendMyEvents(myEvents);
+    });
+}
+
+hostedEvents();
+
+function appendMyEvents(myEvents) {
+    let htmlTemplate = "";
+    for (let event of myEvents) {
+        console.log(event);
+        htmlTemplate += `
+        <article>
+        <img src="${event.img}">
+        <div class="padding">
+        <div class= "event_date"
+                <h4>${event.month}</h4>
+                <h5 class="text-adjust">${event.day}</h5>
+            </div>
+            <div class="event_title">
+                <h2>${event.name}</h2>
+                <p class="text-adjust" >Organiser: ${event.organiser}</p>
+            </div>
+            <h7 clas="event_price">${event.price}</h7>
+        </div>
+        </article>
+        `;
+    }
+
+    document.querySelector('#my-events-container').innerHTML = htmlTemplate;
+}
+
+
+
+
+
+
+
+
 
 function hideCategories() {
     document.getElementById("#categories-container").style.display = "none";
@@ -118,22 +175,22 @@ function search(searchValue) {
         searchValue = searchValue.toLowerCase();
         let filteredEvents = events.filter(event => event.name.toLowerCase().includes(searchValue));
 
-        console.log(filteredEvents); 
-        
+        console.log(filteredEvents);
+
         appendCategories(filteredEvents);
 
-        
+
         /* searchbar appending searched events*/
         var search_input = document.getElementById('searchbar');
 
         if (search_input.value.length == 0) {
             closeFilteredCategories()
-            
+
         } else {
             document.getElementById("filtered-events").style.display = "block";
             document.getElementById("categories-container").style.display = "none";
         };
-        
+
     });
 };
 
@@ -166,6 +223,8 @@ function showMe() {
     document.querySelector("#party").innerHTML = "HALLOWEEN PARTY";
 }
 
+
+//filtering by categories
 
 function openMusic(value) {
     _eventRef.onSnapshot(function (snapshotData) {
