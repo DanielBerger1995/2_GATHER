@@ -42,6 +42,7 @@ function orderByFriends() {
             events.push(event);
         });
         appendEvents(events);
+        
 
     });
 }
@@ -71,8 +72,7 @@ function appendEvents(events) {
     }
 
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
-
-
+    document.querySelector('#calendar-events').innerHTML = htmlTemplate;
 }
 
 // select specific event
@@ -165,13 +165,6 @@ function appendMyEvents(myEvents) {
 
     document.querySelector('#my-events-container').innerHTML = htmlTemplate;
 }
-
-
-
-
-
-
-
 
 
 function hideCategories() {
@@ -596,4 +589,9 @@ function closeFilteredCategories() {
     document.getElementById("searchbar").style.display = "block";
     document.getElementById("closeCatBut").style.display = "none";
 }
+
+
+//CALENDAR
+
+
 
