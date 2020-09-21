@@ -180,15 +180,6 @@ function appendMyEvents(myEvents) {
     document.querySelector('#my-events-container').innerHTML = htmlTemplate;
 }
 
-
-
-
-
-
-
-
-
-
 function hideCategories() {
     document.getElementById("#categories-container").style.display = "none";
 }

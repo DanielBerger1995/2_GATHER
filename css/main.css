@@ -79,7 +79,15 @@ h2 {
   animation: fadeIn 0.4s;
   /* padding equals height of tabbar and topbar */
   padding: 30px 0;
-  margin-bottom: 60px;
+  margin-bottom: 60px; 
+}
+
+.page1 {
+  background-image: url(/img/Group\ 427.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 50%;
+  
 }
 
 /* ---------- logo styling ---------- */
@@ -877,6 +885,7 @@ input {
 	 
 }
 
+/***************** PREFERENCES*****************/
 .preferences_heading {
   background-color: white;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
@@ -884,6 +893,15 @@ input {
   box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.2);
   height: 140px;
   padding: 0px 0px 20px 0px;
+  margin-bottom: 20px;
+}
+
+.opacity {
+  opacity: 0.4;
+}
+
+.square-active {
+  opacity: 1;
 }
 
 .get_started {

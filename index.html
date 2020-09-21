@@ -28,31 +28,27 @@
 
 <!---------------------- PREFERENCES --------------------->
 
-<section id="preferences" class="page">
+<section id="preferences" class="page page1">
   <div class="preferences_heading">
     <h2>What interests you?</h2>
     <p>Select the categories you like!</p>
-    <button type="button" name="button" class="get_started">GET STARTED</button>
+    <button type="button" name="button" class="get_started" >GET STARTED</button>
   </div>
   <div id="categories-container">
-    <button class="icon1"><i class="cat_icon fas fa-music"></i>Music</button>
-    <button class="icon2"><i class="cat_icon fas fa-glass-cheers"></i>Party</button>
-    <button class="icon3"><i class="cat_icon fas fa-running"></i>Sport</button>
-    <button class="icon4"><i class="cat_icon fas fa-palette"></i>Art</button>
-    <button class="icon5"><i class="cat_icon fas fa-gamepad"></i>Games</button>
-    <button class="icon6"><i class="cat_icon fas fa-utensils"></i>Food</button>
-    <button class="icon7"><i class="cat_icon fas fa-lightbulb"></i>Technology</button>
-    <button class="icon8"><i class="cat_icon fas fa-theater-masks"></i>Culture</button>
-    <button class="icon9"><i
-        class="cat_icon fas fa-graduation-cap"></i>Education</button>
-    <button class="icon10"><i class="cat_icon fas fa-book"></i>Literature</button>
-    <button class="icon11"><i
-        class="cat_icon fas fa-shopping-cart"></i>Shopping</button>
-    <button class="icon12"><i
-        class="cat_icon fas fa-archway"></i>Sightseeing</button>
-    <button class="icon13"><i class="cat_icon fas fa-video"></i>Movies</button>
-    <button class="icon14"><i
-        class="cat_icon fas fa-seedling"></i>Environment</button>
+    <button class="icon1 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-music"></i>Music</button>
+    <button class="icon2 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-glass-cheers"></i>Party</button>
+    <button class="icon3 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-running"></i>Sport</button>
+    <button class="icon4 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-palette"></i>Art</button>
+    <button class="icon5 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-gamepad"></i>Games</button>
+    <button class="icon6 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-utensils"></i>Food</button>
+    <button class="icon7 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-lightbulb"></i>Technology</button>
+    <button class="icon8 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-theater-masks"></i>Culture</button>
+    <button class="icon9 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-graduation-cap"></i>Education</button>
+    <button class="icon10 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-book"></i>Literature</button>
+    <button class="icon11 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-shopping-cart"></i>Shopping</button>
+    <button class="icon12 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-archway"></i>Sightseeing</button>
+    <button class="icon13 opacity" id="preference" onclick="onClickActive()"><i class="cat_icon fas fa-video"></i>Movies</button>
+    <button class="icon14 opacity" id="preference" ><i class="cat_icon fas fa-seedling"></i>Environment</button>
   </div>
   <div id="preferences-container"></div>
 </section>
@@ -60,7 +56,7 @@
 
   <!-- pages -->
   <!---------------------- HOME PAGE --------------->
-  <section id="home" class="page">
+  <section id="home" class="page page1">
     <header class="topbar">
       <h2 id="hello"></h2>
       <p>These are the newest Events<br>you may be interested in:</p>
@@ -317,6 +313,7 @@
   <script src="js/underline.js"></script>
   <script src="js/profile.js"></script>
   <script src="js/calendar.js"></script>
+  <script src="js/preferences.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
  
 </body>

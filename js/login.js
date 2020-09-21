@@ -23,7 +23,7 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-    showPage("home");
+    
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
