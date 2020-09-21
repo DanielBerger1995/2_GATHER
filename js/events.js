@@ -2,6 +2,7 @@
 
 const _eventRef = _db.collection("Events");
 let _selectedImgFile = "";
+let moment;
 
 
 
@@ -42,7 +43,7 @@ function orderByFriends() {
             events.push(event);
         });
         appendEvents(events);
-        
+
 
     });
 }
@@ -75,8 +76,8 @@ function appendEventsDetails(id, name, place, img) {
     console.log(id, name, place);
     // references to the input fields
     let htmlTemplate = "";
-        console.log();
-        htmlTemplate += `
+    console.log();
+    htmlTemplate += `
         <article>
         <img src="${img}">
             <div class="event_title">
@@ -84,7 +85,7 @@ function appendEventsDetails(id, name, place, img) {
             </div>
         </article>
         `;
-    
+
     document.querySelector('#select-event').innerHTML = htmlTemplate;
 }
 
