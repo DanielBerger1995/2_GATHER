@@ -216,9 +216,6 @@ function search(searchValue) {
     });
 };
 
-
-
-
 function previewImage(file, previewId) {
     if (file) {
         _selectedImgFile = file;

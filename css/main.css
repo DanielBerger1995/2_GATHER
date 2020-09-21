@@ -87,7 +87,11 @@ h2 {
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 50%;
-  
+}
+
+.page2 {
+  margin: 0;
+  padding: 0;
 }
 
 /* ---------- logo styling ---------- */
@@ -95,7 +99,7 @@ h2 {
   margin: auto;
   width: 100%;
   max-width: 200px;
-  margin: 100px 0 200px 0;
+  margin: 100px 0 100px 0;
 }
 
 /* ---------- animations ---------- */
@@ -341,10 +345,6 @@ h7 {
   margin: 1em 0;
 }
 
-/*----------- SPECIFIC EVENT ----------*/
-#select-event >article img {
-  width: 100%;
-}
 /* ----------------- authentication styling ----------------- */
 #firebaseui-auth-container {
   top: 50%;
