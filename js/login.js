@@ -29,7 +29,7 @@ function userAuthenticated(user) {
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
     document.getElementById("hello_user").innerHTML =
         `<h2>${user.displayName}</h2>
-    <img src="${user.photoURL}">
+    <img src="${user.photoURL}+ "?width=100&height=100">
     <br>
     <h4>E-mail:</h4> 
     ${user.email}`;
