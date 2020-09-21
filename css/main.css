@@ -248,6 +248,51 @@ input {
   margin: 0;
 }
 
+.grid-container> article {
+  margin: 22px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.grid-container> article img {
+  max-width: auto;
+  width: 100%;
+}
+
+.grid-container> article h2 {
+  text-align: left;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+}
+
+.grid-container> article h5 {
+  text-align: left;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2em;
+  margin: 0;
+}
+
+.grid-container> article h4 {
+  text-align: left;
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin: 0;
+  font-size: 1em;
+}
+
+.grid-container> article p {
+  font-family: rift,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin: 0;
+}
+
 .text-adjust {
   display: inline-block;
 }
@@ -1057,13 +1102,13 @@ h3 {
   font-size: 20px;
 }
 
-#calendar-events>article {
+#calendar-events> a article {
   margin: 22px;
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
 }
-#calendar-events>article img {
+#calendar-events> a article img {
   display: none;
   
 }
