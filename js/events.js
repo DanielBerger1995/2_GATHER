@@ -72,32 +72,20 @@ function appendEvents(events) {
 
 // select specific event
 function appendEventsDetails(id, name, place, img) {
-
     console.log(id, name, place);
     // references to the input fields
     let htmlTemplate = "";
-    
         console.log();
         htmlTemplate += `
         <article>
         <img src="${img}">
-        <div class="padding">
-        <div class= "event_date"
-                
-                
-            </div>
             <div class="event_title">
                 <h2>${name}</h2>
-               
             </div>
-            
-        </div>
         </article>
         `;
     
     document.querySelector('#select-event').innerHTML = htmlTemplate;
-
-
 }
 
 // create new event
