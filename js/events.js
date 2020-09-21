@@ -56,17 +56,12 @@ function appendEvents(events) {
         htmlTemplate += `
         <a href="#select-event" onclick="appendEventsDetails('${event.id}','${event.name}', '${event.place}', '${event.img}')"><article>
         <img src="${event.img}">
-        <div class="padding">
-        <div class= "event_date"
-                <h4>${event.month}</h4>
-                <h5 class="text-adjust">${event.day}</h5>
-            </div>
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <p class="text-adjust" >Organiser: ${event.organiser}</p>
+                <h4>${moment(event.date.toDate()).calendar()}</h4>
+                <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <h7 clas="event_price">${event.price}</h7>
             </div>
-            <h7 clas="event_price">${event.price}</h7>
-        </div>
         </article></a>
         `;
     }
