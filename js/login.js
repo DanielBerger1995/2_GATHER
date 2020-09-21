@@ -23,8 +23,7 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-
-    showPage("search");
+    showPage("home");
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
@@ -55,7 +54,7 @@ function userNotAuthenticated() {
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
-        signInSuccessUrl: '#home'
+        signInSuccessUrl: '#preferences'
     };
     // Init Firebase UI Authentication
     const ui = new firebaseui.auth.AuthUI(firebase.auth());

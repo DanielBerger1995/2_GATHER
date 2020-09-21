@@ -873,6 +873,19 @@ input {
 	 
 }
 
+.preferences_heading {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.2);
+  height: 130px;
+  padding: 0px 0px 20px 0px;
+}
+
+.get_started {
+  margin-top: 0;
+}
+
 /*--------------------SEARCH PAGE -----------------*/
 .search_heading {
   background-color: white;
