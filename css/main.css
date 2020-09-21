@@ -333,6 +333,10 @@ h7 {
   margin: 1em 0;
 }
 
+/*----------- SPECIFIC EVENT ----------*/
+#select-event >article img {
+  width: 100%;
+}
 /* ----------------- authentication styling ----------------- */
 #firebaseui-auth-container {
   top: 50%;

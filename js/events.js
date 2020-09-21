@@ -2,19 +2,19 @@
 
 const _eventRef = _db.collection("Events");
 let _selectedImgFile = "";
-
+let _events = [];
 
 
 
 function orderByUpcoming() {
     _eventRef.orderBy("date").onSnapshot(function (snapshotData) {
-        let events = [];
+        _events = [];
         snapshotData.forEach(function (doc) {
             let event = doc.data();
             event.id = doc.id;
-            events.push(event);
+            _events.push(event);
         });
-        appendEvents(events);
+        appendEvents(_events);
     });
 }
 
@@ -54,12 +54,13 @@ function appendEvents(events) {
     for (let event of events) {
         console.log(event);
         htmlTemplate += `
-        <a href="#select-event" onclick="appendEventsDetails('${event.id}','${event.name}', '${event.place}', '${event.img}')"><article>
+        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <p>${event.location}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -71,16 +72,27 @@ function appendEvents(events) {
 }
 
 // select specific event
-function appendEventsDetails(id, name, place, img) {
-    console.log(id, name, place);
+function appendEventsDetails(id) {
+    console.log(id);
     // references to the input fields
+    let specificEvent = "";
+    for (let event of _events) {
+        if (event.id == id){
+            specificEvent = event;
+        }
+    }
+
     let htmlTemplate = "";
         console.log();
         htmlTemplate += `
         <article>
-        <img src="${img}">
+        <img src="${specificEvent.img}">
             <div class="event_title">
-                <h2>${name}</h2>
+                <h2>${specificEvent.name}</h2>
+                <h4>${specificEvent.organiser}</h4>
+                <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <p>${specificEvent.location}</p>
+                <p>${specificEvent.description}</p>
             </div>
         </article>
         `;
