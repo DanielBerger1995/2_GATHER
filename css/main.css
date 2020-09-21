@@ -720,8 +720,85 @@ input {
 }
 
 
+/*-------- update profile information ---------*/
+
+.profile_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 2.4em;
+  margin-right: 2.4em;
+}
+
+.user_name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 3.1em;
+}
+
+#user-name {
+  margin-right: 15px;
+}
+
+#user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #f4f4f4;
+}
+
+.fa-user:before {
+  content: "\f007";
+  font-size: 85px;
+  opacity: 0.4;
+}
+
+.followers-container {
+  padding: 10px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.following-container {
+  padding: 10px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+.followers {
+  font-family: rift,sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15px;
+}
+
+.open_update {
+  border: none;
+  width: auto;
+  margin: 0;
+}
 
 
+#update-user-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: none;
+}
+
+#user-photo-update {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: #f4f4f4;
+  margin: 10px auto;
+}
 
 
 /*-----------------TICKETS PAGE---------------------*/
@@ -798,6 +875,19 @@ input {
 	 height: 5px;
 	 z-index: 1;
 	 
+}
+
+.preferences_heading {
+  background-color: white;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.2);
+  height: 140px;
+  padding: 0px 0px 20px 0px;
+}
+
+.get_started {
+  margin-top: 0;
 }
 
 /*--------------------SEARCH PAGE -----------------*/

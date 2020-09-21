@@ -42,7 +42,7 @@ function orderByFriends() {
             events.push(event);
         });
         appendEvents(events);
-        
+
 
     });
 }
@@ -83,8 +83,8 @@ function appendEventsDetails(id) {
     }
 
     let htmlTemplate = "";
-        console.log();
-        htmlTemplate += `
+    console.log();
+    htmlTemplate += `
         <article>
         <img src="${specificEvent.img}">
             <div class="event_title">
@@ -96,7 +96,7 @@ function appendEventsDetails(id) {
             </div>
         </article>
         `;
-    
+
     document.querySelector('#select-event').innerHTML = htmlTemplate;
 }
 
@@ -111,6 +111,8 @@ function createAnEvent() {
     let priceInput = document.querySelector('#price');
     let freeInput = document.querySelector('#free');
     let categoriesInput = document.querySelector('#categories');
+    let dateInput = document.querySelector('#date');
+    let locationInput = document.querySelector('#location');
     let user = _currentUser;
 
     let newEvent = {
@@ -120,11 +122,14 @@ function createAnEvent() {
         price: priceInput.value,
         price: freeInput.value = "FREE",
         category: categoriesInput.value,
+        date: dateInput.value,
+        location: locationInput.value,
         organiser: user.displayName
     };
     _eventRef.add(newEvent);
     document.getElementById("create").style.display = "none";
     document.getElementById("myForm").reset();
+    document.getElementById("my-events-section").style.display = "block";
 
 }
 
@@ -174,6 +179,14 @@ function appendMyEvents(myEvents) {
 
     document.querySelector('#my-events-container').innerHTML = htmlTemplate;
 }
+
+
+
+
+
+
+
+
 
 
 function hideCategories() {

@@ -23,13 +23,19 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-    showPage("search");
+    showPage("home");
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
+    document.getElementById("user-name").innerHTML =
+        `<h2>${user.displayName}</h2>`;
+    document.getElementById("user-photo").innerHTML =
+        `<img src="${user.photoURL}+ "?width=100&height=100">`;
+    document.getElementById("user-photo-update").innerHTML =
+        `<img src="${user.photoURL}+ "?width=100&height=100">`;
     document.getElementById("hello_user").innerHTML =
         `<h2>${user.displayName}</h2>
-    <img src="${user.photoURL}">
+    <img src="${user.photoURL}+ "?width=100&height=100">
     <br>
     <h4>E-mail:</h4> 
     ${user.email}`;
@@ -48,7 +54,7 @@ function userNotAuthenticated() {
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
             firebase.auth.FacebookAuthProvider.PROVIDER_ID
         ],
-        signInSuccessUrl: '#home'
+        signInSuccessUrl: '#preferences'
     };
     // Init Firebase UI Authentication
     const ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -60,6 +66,10 @@ function userNotAuthenticated() {
 function logout() {
     firebase.auth().signOut();
 }
+
+
+
+
 
 // ===== TABBAR NAVIGATION ====//
 
