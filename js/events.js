@@ -91,7 +91,7 @@ function appendEventsDetails(id) {
                 <h2>${specificEvent.name}</h2>
                 <h4>${specificEvent.organiser}</h4>
                 <h4>${specificEvent.date}</h4>
-                <p>${specificEvent.location}</p>
+                <p>${specificEvent.place}</p>
                 <p>${specificEvent.description}</p>
                 <p>${generateFavEventButton(specificEvent.id)}</p>
                 
