@@ -56,13 +56,13 @@ function appendEvents(events) {
         console.log(event);
         htmlTemplate += `
         <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
-        <img src="${event.img}">
+        <img src="${event.img}" alt="Event Photo">
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
                 <p>${event.place}</p>
-                <img class="friends_icons" src="${event.friends}">
+                <img class="friends_icons" alt="Friends Icons" src="${event.friends}">
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -89,7 +89,7 @@ function appendEventsDetails(id) {
     htmlTemplate += `
         <article>
         <button class="back-selected" onclick="goBack()"><i class="fas fa-chevron-left"></i></button>
-        <img src="${specificEvent.img}">
+        <img src="${specificEvent.img}" alt="Event Photo">
          <h2 class="going">GOING</h2>
             <div class="event_title">
             <div class="different-font">
@@ -123,9 +123,6 @@ function generateFavEventButton(specificEventId) {
     return btnTemplate;
 }
 
-
-
-
 // append favourite events to the DOM
 async function appendFavEvents(favEventIds = []) {
     let htmlTemplate = "";
@@ -158,6 +155,7 @@ function showGoing() {
     let element = document.querySelector(".going")
     element.classList.toggle("goingoff");
 }
+
 // adds a given eventId to the favEvents array inside _currentUser
 function addToFavourites(eventId) {
     showLoader(true);
@@ -239,7 +237,7 @@ function appendMyEvents(myEvents) {
         console.log(event);
         htmlTemplate += `
         <a href="#select-event" onclick="appendMyEventsDetails('${event.id}')"><article>
-        <img src="${event.img}">
+        <img src="${event.img}" alt="Event Photo">
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
@@ -269,7 +267,7 @@ function appendMyEventsDetails(id) {
     htmlTemplate += `
         <article>
         <button class="back-selected" onclick="goBack()"><i class="fas fa-chevron-left"></i></button>
-        <img src="${specificEvent.img}">
+        <img src="${specificEvent.img}" alt="Event Photo">
             <div class="event_title">
             <div class="different-font">
                 <h2>${specificEvent.name}</h2>
@@ -708,7 +706,7 @@ function appendCategories(filteredEvents) {
     for (let event of filteredEvents) {
         htmlTemplate += `
         <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
-        <img src="${event.img}">
+        <img src="${event.img}" alt="Event Photo">
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
