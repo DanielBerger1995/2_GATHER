@@ -953,6 +953,18 @@ input {
   grid-gap: 10px;
 }
 
+#preferences_categories-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 10px;
+  color: white;
+  width: 300px;
+  margin: 20px auto 100px auto;
+  grid-gap: 10px;
+}
+
+
 #searched_fileterd_events {
   background-color: white;
   width: 100%;
