@@ -12,5 +12,3 @@ document.querySelector("#calendar-container").innerHTML = today;
 
 getDate();
 
-
-

@@ -60,7 +60,6 @@ function appendEvents(events) {
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.location}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -86,14 +85,18 @@ function appendEventsDetails(id) {
     console.log();
     htmlTemplate += `
         <article>
+        <a href="#home"><button class="back-selected" onclick="goBack"><i class="fas fa-chevron-left"></i></button></a>
         <img src="${specificEvent.img}">
             <div class="event_title">
+            <div class="different-font">
                 <h2>${specificEvent.name}</h2>
-                <h4>${specificEvent.organiser}</h4>
-                <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
-                <p>${specificEvent.location}</p>
+                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
+                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.location}</p>
+                </div>
                 <p>${specificEvent.description}</p>
             </div>
+            
         </article>
         `;
 
