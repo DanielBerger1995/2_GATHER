@@ -62,7 +62,7 @@ function appendEvents(events) {
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
                 <p>${event.place}</p>
-                <img src="${event.friends}">
+                <img class="friends_icons" src="${event.friends}">
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
