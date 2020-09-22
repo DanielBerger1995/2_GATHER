@@ -384,6 +384,7 @@ h7 {
 #select-event >article img {
   width: 100%;
   position: relative;
+  margin-top: -30px;
 }
 
 
@@ -395,6 +396,16 @@ h7 {
 
 .button-interested-going {
   max-width: 150px;
+}
+
+.share {
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  align-self: flex-end;
 }
 
 .specific-event-button {
@@ -1373,6 +1384,27 @@ h3 {
   
   right: 20px;
 }
+
+#select-event > article .friends_icons {
+  width: 120px;
+  margin: 10px 0 0 0;
+  
+}
+
+#select-event > article .fa-share-alt {
+  font-size: 30px;
+  margin-right: 20px ;
+  
+}
+
+#select-event > article .share_friends {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
 
 .tickets-container {
   margin: auto;
