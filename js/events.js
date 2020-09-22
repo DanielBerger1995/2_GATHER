@@ -77,7 +77,7 @@ function appendEventsDetails(id) {
     // references to the input fields
     let specificEvent = "";
     for (let event of _events) {
-        if (event.id == id){
+        if (event.id == id) {
             specificEvent = event;
         }
     }

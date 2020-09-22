@@ -22,7 +22,6 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-    addCategoryIcon();
 
 
 
