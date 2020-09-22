@@ -60,6 +60,7 @@ function appendEvents(events) {
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <p>${event.location}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -76,7 +77,7 @@ function appendEventsDetails(id) {
     // references to the input fields
     let specificEvent = "";
     for (let event of _events) {
-        if (event.id == id) {
+        if (event.id == id){
             specificEvent = event;
         }
     }
@@ -85,21 +86,14 @@ function appendEventsDetails(id) {
     console.log();
     htmlTemplate += `
         <article>
-        <a href="#home"><button class="back-selected" onclick="goBack"><i class="fas fa-chevron-left"></i></button></a>
         <img src="${specificEvent.img}">
             <div class="event_title">
-            <div class="different-font">
                 <h2>${specificEvent.name}</h2>
-                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
-                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
-                <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.location}</p>
-                </div>
+                <h4>${specificEvent.organiser}</h4>
+                <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <p>${specificEvent.location}</p>
                 <p>${specificEvent.description}</p>
             </div>
-            <div class="selected_event-button">
-      <button type="button" name="button" onclick="" class="button-interested-going">INTERESTED</button>
-      <button type="button" name="button" onclick="" class="button-interested-going">GOING</button>
-    </div>
         </article>
         `;
 
@@ -253,7 +247,7 @@ function showMe() {
 
 //filtering by categories
 
-function openMusic() {
+function openMusic(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -262,6 +256,7 @@ function openMusic() {
             events.push(event);
         });
 
+        value = "music";
         let filteredEvents = events.filter(event => event.category.includes("music"));
 
         console.log(filteredEvents);
@@ -275,7 +270,7 @@ function openMusic() {
 
 };
 
-function openParty() {
+function openParty(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -284,7 +279,7 @@ function openParty() {
             events.push(event);
         });
 
-
+        value = "party";
         let filteredEvents = events.filter(event => event.category.includes("party"));
 
         console.log(filteredEvents);
@@ -298,7 +293,7 @@ function openParty() {
 
 };
 
-function openSport() {
+function openSport(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -307,6 +302,7 @@ function openSport() {
             events.push(event);
         });
 
+        value = "sport";
         let filteredEvents = events.filter(event => event.category.includes("sport"));
 
         console.log(filteredEvents);
@@ -320,7 +316,7 @@ function openSport() {
 
 };
 
-function openArt() {
+function openArt(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -329,6 +325,7 @@ function openArt() {
             events.push(event);
         });
 
+        value = "art";
         let filteredEvents = events.filter(event => event.category.includes("art"));
 
         console.log(filteredEvents);
@@ -342,7 +339,7 @@ function openArt() {
 
 };
 
-function openGames() {
+function openGames(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -351,6 +348,7 @@ function openGames() {
             events.push(event);
         });
 
+        value = "games";
         let filteredEvents = events.filter(event => event.category.includes("games"));
 
         console.log(filteredEvents);
@@ -364,7 +362,7 @@ function openGames() {
 
 };
 
-function openFood() {
+function openFood(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -373,7 +371,7 @@ function openFood() {
             events.push(event);
         });
 
-
+        value = "food";
         let filteredEvents = events.filter(event => event.category.includes("food"));
 
         console.log(filteredEvents);
@@ -387,7 +385,7 @@ function openFood() {
 
 };
 
-function openTechnology() {
+function openTechnology(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -396,7 +394,7 @@ function openTechnology() {
             events.push(event);
         });
 
-
+        value = "technology";
         let filteredEvents = events.filter(event => event.category.includes("technology"));
 
         console.log(filteredEvents);
@@ -410,7 +408,7 @@ function openTechnology() {
 
 };
 
-function openCulture() {
+function openCulture(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -419,7 +417,7 @@ function openCulture() {
             events.push(event);
         });
 
-
+        value = "culture";
         let filteredEvents = events.filter(event => event.category.includes("culture"));
 
         console.log(filteredEvents);
@@ -433,7 +431,7 @@ function openCulture() {
 
 };
 
-function openEducation() {
+function openEducation(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -442,7 +440,7 @@ function openEducation() {
             events.push(event);
         });
 
-
+        value = "education";
         let filteredEvents = events.filter(event => event.category.includes("education"));
 
         console.log(filteredEvents);
@@ -456,7 +454,7 @@ function openEducation() {
 
 };
 
-function openLiterature() {
+function openLiterature(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -465,7 +463,7 @@ function openLiterature() {
             events.push(event);
         });
 
-
+        value = "literature";
         let filteredEvents = events.filter(event => event.category.includes("literature"));
 
         console.log(filteredEvents);
@@ -479,7 +477,7 @@ function openLiterature() {
 
 };
 
-function openShopping() {
+function openShopping(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -488,7 +486,7 @@ function openShopping() {
             events.push(event);
         });
 
-
+        value = "shopping";
         let filteredEvents = events.filter(event => event.category.includes("shopping"));
 
         console.log(filteredEvents);
@@ -502,7 +500,7 @@ function openShopping() {
 
 };
 
-function openSightseeing() {
+function openSightseeing(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -511,7 +509,7 @@ function openSightseeing() {
             events.push(event);
         });
 
-
+        value = "sightseeing";
         let filteredEvents = events.filter(event => event.category.includes("sightseeing"));
 
         console.log(filteredEvents);
@@ -525,7 +523,7 @@ function openSightseeing() {
 
 };
 
-function openMovies() {
+function openMovies(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -534,7 +532,7 @@ function openMovies() {
             events.push(event);
         });
 
-
+        value = "movies";
         let filteredEvents = events.filter(event => event.category.includes("movies"));
 
         console.log(filteredEvents);
@@ -548,7 +546,7 @@ function openMovies() {
 
 };
 
-function openEnvironment() {
+function openEnvironment(value) {
     _eventRef.onSnapshot(function (snapshotData) {
         let events = [];
         snapshotData.forEach(function (doc) {
@@ -557,6 +555,7 @@ function openEnvironment() {
             events.push(event);
         });
 
+        value = "environment";
         let filteredEvents = events.filter(event => event.category.includes("environment"));
 
         console.log(filteredEvents);
@@ -577,8 +576,11 @@ function appendCategories(filteredEvents) {
         htmlTemplate += `
         <article>
         <img src="${event.img}">
-       
-        <h4>${moment(event.date.toDate()).calendar()}</h4>
+        <div class="padding">
+        <div class= "event_date"
+                <h4>${event.month}</h4>
+                <h5 class="text-adjust">${event.day}</h5>
+            </div>
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <p class="text-adjust" >Organiser: ${event.organiser}</p>

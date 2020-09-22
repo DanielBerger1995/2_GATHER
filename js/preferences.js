@@ -13,19 +13,3 @@ function hideNav() {
 }
 
 
-/****** Function for icons in the events ******/
-
-function addCategoryIcon() {
-    for (let event of _events) {
-        if (event.category == music) {
-            specificEvent = event;
-        }
-    }
-}
-
-/****** ICONS FOR CATEGORIES ******/
-
-let music_icon = /*html*/ `
-<i class="fas fa-music"></i>
-`
-
