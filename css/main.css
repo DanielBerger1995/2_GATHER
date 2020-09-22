@@ -1278,8 +1278,13 @@ h3 {
 #calendar-whole-container {
   width: 90%;
   height: 400px;
-  background-color: gray;
+  background-color: rgb(180, 180, 180);
   margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
 }
 
 #calendar-events> a article {

@@ -22,7 +22,9 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-    showPage("home");
+    addCategoryIcon();
+
+
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
@@ -32,12 +34,6 @@ function userAuthenticated(user) {
         `<img src="${user.photoURL}+ "?width=100&height=100">`;
     document.getElementById("user-photo-update").innerHTML =
         `<img src="${user.photoURL}+ "?width=100&height=100">`;
-    document.getElementById("hello_user").innerHTML =
-        `<h2>${user.displayName}</h2>
-    <img src="${user.photoURL}+ "?width=100&height=100">
-    <br>
-    <h4>E-mail:</h4> 
-    ${user.email}`;
 }
 
 
