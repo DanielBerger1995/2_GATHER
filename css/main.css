@@ -1218,12 +1218,19 @@ h3 {
 /*********************CALENDAR*************************/
 #calendar-container {
   width: 80%;
-  height: 400px;
+  height: 20px;
   background-color: gray;
   text-align: center;
-  margin: 30px auto;
+  margin: 30px auto 10px auto;
   padding: 20px;
   font-size: 20px;
+}
+
+#calendar-whole-container {
+  width: 90%;
+  height: 400px;
+  background-color: gray;
+  margin: auto;
 }
 
 #calendar-events> a article {
