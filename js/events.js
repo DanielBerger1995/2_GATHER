@@ -96,7 +96,10 @@ function appendEventsDetails(id) {
                 </div>
                 <p>${specificEvent.description}</p>
             </div>
-            
+            <div class="selected_event-button">
+      <button type="button" name="button" onclick="" class="button-interested-going">INTERESTED</button>
+      <button type="button" name="button" onclick="" class="button-interested-going">GOING</button>
+    </div>
         </article>
         `;
 
@@ -574,11 +577,8 @@ function appendCategories(filteredEvents) {
         htmlTemplate += `
         <article>
         <img src="${event.img}">
-        <div class="padding">
-        <div class= "event_date"
-                <h4>${event.month}</h4>
-                <h5 class="text-adjust">${event.day}</h5>
-            </div>
+       
+        <h4>${moment(event.date.toDate()).calendar()}</h4>
             <div class="event_title">
                 <h2>${event.name}</h2>
                 <p class="text-adjust" >Organiser: ${event.organiser}</p>
