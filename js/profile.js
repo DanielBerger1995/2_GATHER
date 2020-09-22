@@ -26,18 +26,7 @@ function updateUser() {
     // update auth user
     user.updateProfile({
         displayName: document.querySelector('#username').value,
-        photoURL: document.querySelector('#previewProfileImage').value
 
     });
 }
 
-// ========== Prieview image function ========== //
-function previewProfileImage(file, previewId) {
-    if (file) {
-        let reader = new FileReader();
-        reader.onload = function (event) {
-            document.querySelector('#' + previewId).setAttribute('src', event.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
-}
