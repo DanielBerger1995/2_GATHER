@@ -345,6 +345,35 @@ h7 {
   margin: 1em 0;
 }
 
+/*********************CALENDAR*************************/
+#calendar-container {
+  width: 80%;
+  height: 20px;
+  background-color: rgb(172, 172, 172);
+  text-align: center;
+  margin: 30px auto 10px auto;
+  padding: 20px;
+  font-size: 20px;
+}
+
+#calendar-big-container {
+  width: 90%;
+  height: 250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+.calendar-day {
+  background-color: rgb(219, 219, 219);
+  padding: 10px;
+  margin: 2px;
+  text-align: center;
+}
+
 /*----------- SPECIFIC EVENT ----------*/
 #select-event >article img {
   width: 100%;
