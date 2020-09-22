@@ -60,6 +60,7 @@ function appendEvents(events) {
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <p>${event.location}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -85,16 +86,15 @@ function appendEventsDetails(id) {
     console.log();
     htmlTemplate += `
         <article>
-        <a href="#home"><button class="back-selected" onclick="goBack"><i class="fas fa-chevron-left"></i></button></a>
         <img src="${specificEvent.img}">
             <div class="event_title">
-            <div class="different-font">
                 <h2>${specificEvent.name}</h2>
-                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
-                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
-                <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.location}</p>
-                </div>
+                <h4>${specificEvent.organiser}</h4>
+                <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <p>${specificEvent.location}</p>
                 <p>${specificEvent.description}</p>
+                <p>${generateFavEventButton(specificEvent.id)}</p>
+                
             </div>
             <div class="selected_event-button">
       <button type="button" name="button" onclick="" class="button-interested-going">INTERESTED</button>
@@ -106,6 +106,60 @@ function appendEventsDetails(id) {
     document.querySelector('#select-event').innerHTML = htmlTemplate;
 }
 
+function generateFavEventButton(specificEventId) {
+    let btnTemplate = `
+    <button onclick="addToFavourites('${specificEventId}')">Add to favourites</button>`;
+    if (_currentUser.favEvents && _currentUser.favEvents.includes(specificEventId)) {
+        btnTemplate = `
+      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">Remove from favourites</button>`;
+    }
+    return btnTemplate;
+}
+
+// append favourite movies to the DOM
+async function appendFavEvents(favEventIds = []) {
+    let htmlTemplate = "";
+    if (favEventIds.length === 0) {
+        htmlTemplate = "<p>Please, add movies to favourites.</p>";
+    } else {
+        for (let eventId of favEventIds) {
+            await _eventRef.doc(eventId).get().then(function (doc) {
+                let event = doc.data();
+                event.id = doc.id;
+                htmlTemplate += `
+         <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
+          <div class="ticket-text"><h2>${event.name}</h2>
+          <h2>${event.date}</h2>
+          <p>${event.location}</p>
+          <p>${event.category}</p>
+          </div>
+          <p class="QR"></p>
+        </article></a>
+      `;
+            });
+        }
+    }
+    document.querySelector('#tickets-container').innerHTML = htmlTemplate;
+    document.querySelector('#calendar-container').innerHTML = htmlTemplate;
+}
+
+// adds a given movieId to the favMovies array inside _currentUser
+function addToFavourites(eventId) {
+    showLoader(true);
+    _userRef.doc(_currentUser.uid).set({
+        favEvents: firebase.firestore.FieldValue.arrayUnion(eventId)
+    }, {
+        merge: true
+    });
+}
+
+// removes a given movieId to the favMovies array inside _currentUser
+function removeFromFavourites(eventId) {
+    showLoader(true);
+    _userRef.doc(_currentUser.uid).update({
+        favEvents: firebase.firestore.FieldValue.arrayRemove(eventId)
+    });
+}
 // create new event
 // add a new event to firestore 
 

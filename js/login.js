@@ -1,10 +1,9 @@
 "use strict";
 
 // ========== GLOBAL VARIABLES ========== //
-const eventRef = _db.collection("Events");
 const _userRef = _db.collection("users")
 let _currentUser;
-let _movies;
+
 
 // ========== FIREBASE AUTH ========== //
 // Listen on authentication state change
@@ -23,8 +22,7 @@ function userAuthenticated(user) {
     hideTabbar(false);
     init();
     showLoader(false);
-    addCategoryIcon();
-    
+    showPage("home");
 
     // Appending currentUser name ans surname to HTML
     document.getElementById("hello").innerHTML = "Hi " + user.displayName;
@@ -34,7 +32,12 @@ function userAuthenticated(user) {
         `<img src="${user.photoURL}+ "?width=100&height=100">`;
     document.getElementById("user-photo-update").innerHTML =
         `<img src="${user.photoURL}+ "?width=100&height=100">`;
-
+    document.getElementById("hello_user").innerHTML =
+        `<h2>${user.displayName}</h2>
+    <img src="${user.photoURL}+ "?width=100&height=100">
+    <br>
+    <h4>E-mail:</h4> 
+    ${user.email}`;
 }
 
 
@@ -56,7 +59,6 @@ function userNotAuthenticated() {
     const ui = new firebaseui.auth.AuthUI(firebase.auth());
     ui.start('#firebaseui-auth-container', uiConfig);
     showLoader(false);
-    hideNav()
 }
 
 //=== sign out user ===//
@@ -80,10 +82,14 @@ function hideTabbar(hide) {
     }
 }
 
+function appendUserData() {
+    document.querySelector('#name').value = _currentUser.displayName;
+
+}
 //=== Init function for whole SPA ===//
 function init() {
     // init user data and favourite movies
-    eventRef.doc(_currentUser.uid).onSnapshot({
+    _userRef.doc(_currentUser.uid).onSnapshot({
         includeMetadataChanges: true
     }, function (userData) {
         if (!userData.metadata.hasPendingWrites && userData.data()) {
@@ -92,8 +98,13 @@ function init() {
                 ...userData.data()
             }; //concating two objects: authUser object and userData objec from the db
             appendUserData();
+            appendFavEvents(_currentUser.favEvents);
+            if (_events) {
+                appendEvents(_events); // refresh movies when user data changes
+            }
+            showLoader(false);
         }
-
     });
+
 }
 
