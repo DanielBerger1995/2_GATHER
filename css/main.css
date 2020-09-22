@@ -627,7 +627,15 @@ select {
 
 /* creating events form finishing */
 
+/* updating events */
 
+#update-event {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
 /*------------------------- setting page -----------------------*/
 

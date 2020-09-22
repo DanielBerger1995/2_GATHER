@@ -3,6 +3,7 @@
 const _eventRef = _db.collection("Events");
 let _selectedImgFile = "";
 let _events = [];
+let _selectedEventId = "";
 
 
 
@@ -200,7 +201,7 @@ function createAnEvent() {
         price: freeInput.value = "FREE",
         category: categoriesInput.value,
         date: dateInput.value,
-        location: locationInput.value,
+        place: locationInput.value,
         organiser: user.displayName
     };
     _eventRef.add(newEvent);
@@ -237,7 +238,7 @@ function appendMyEvents(myEvents) {
     for (let event of myEvents) {
         console.log(event);
         htmlTemplate += `
-        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
+        <a href="#select-event" onclick="appendMyEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
@@ -253,8 +254,62 @@ function appendMyEvents(myEvents) {
     document.querySelector('#my-events-container').innerHTML = htmlTemplate;
 }
 
+function appendMyEventsDetails(id) {
+    console.log(id);
+    // references to the input fields
+    let specificEvent = "";
+    for (let event of _events) {
+        if (event.id == id) {
+            specificEvent = event;
+        }
+    }
+
+    let htmlTemplate = "";
+    console.log();
+    htmlTemplate += `
+        <article>
+        <button class="back-selected" onclick="goBack()"><i class="fas fa-chevron-left"></i></button>
+        <img src="${specificEvent.img}">
+            <div class="event_title">
+            <div class="different-font">
+                <h2>${specificEvent.name}</h2>
+               
+                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
+                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
+                </div>
+                <p>${specificEvent.description}</p>
+                <button onclick="updateEventOpen()">update event</button>
+                <button onclick="updateEvent()">delete event</button>
+                
+            </div>
+        </article>
+        `;
+
+    document.querySelector('#select-event').innerHTML = htmlTemplate;
+}
+
+function updateEventOpen() {
+    document.getElementById("update-event").style.display = "block";
+    document.getElementById("select-event").style.display = "none";
+
+}
+
+function closeIconUpdate() {
+    document.getElementById("update-event").style.display = "none";
+    document.getElementById("select-event").style.display = "block";
+}
+
+function updateEvent() {
+    document.getElementById("update-event").style.display = "none";
+    document.getElementById("select-event").style.display = "block";
+}
+
+
+
+
 function hideCategories() {
-    document.getElementById("#categories-container").style.display = "none";
+    document.getElementById("categories-container").style.display = "none";
 }
 
 //////////SEARCHBAR FUNCIONALITY/////////
@@ -311,6 +366,9 @@ function openForm() {
 function closeIcon() {
     document.getElementById("create").style.display = "none";
     document.getElementById("my-events-section").style.display = "block";
+    document.getElementById("update-event").style.display = "none";
+
+
 }
 
 function showMe() {
