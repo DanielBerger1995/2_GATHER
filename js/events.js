@@ -93,6 +93,8 @@ function appendEventsDetails(id) {
                 <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
                 <p>${specificEvent.location}</p>
                 <p>${specificEvent.description}</p>
+                <p>${generateFavEventButton(specificEvent.id)}</p>
+                
             </div>
         </article>
         `;
@@ -100,6 +102,60 @@ function appendEventsDetails(id) {
     document.querySelector('#select-event').innerHTML = htmlTemplate;
 }
 
+function generateFavEventButton(specificEventId) {
+    let btnTemplate = `
+    <button onclick="addToFavourites('${specificEventId}')">Add to favourites</button>`;
+    if (_currentUser.favEvents && _currentUser.favEvents.includes(specificEventId)) {
+        btnTemplate = `
+      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">Remove from favourites</button>`;
+    }
+    return btnTemplate;
+}
+
+// append favourite movies to the DOM
+async function appendFavEvents(favEventIds = []) {
+    let htmlTemplate = "";
+    if (favEventIds.length === 0) {
+        htmlTemplate = "<p>Please, add movies to favourites.</p>";
+    } else {
+        for (let eventId of favEventIds) {
+            await _eventRef.doc(eventId).get().then(function (doc) {
+                let event = doc.data();
+                event.id = doc.id;
+                htmlTemplate += `
+         <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
+          <div class="ticket-text"><h2>${event.name}</h2>
+          <h2>${event.date}</h2>
+          <p>${event.location}</p>
+          <p>${event.category}</p>
+          </div>
+          <p class="QR"></p>
+        </article></a>
+      `;
+            });
+        }
+    }
+    document.querySelector('#tickets-container').innerHTML = htmlTemplate;
+    document.querySelector('#calendar-container').innerHTML = htmlTemplate;
+}
+
+// adds a given movieId to the favMovies array inside _currentUser
+function addToFavourites(eventId) {
+    showLoader(true);
+    _userRef.doc(_currentUser.uid).set({
+        favEvents: firebase.firestore.FieldValue.arrayUnion(eventId)
+    }, {
+        merge: true
+    });
+}
+
+// removes a given movieId to the favMovies array inside _currentUser
+function removeFromFavourites(eventId) {
+    showLoader(true);
+    _userRef.doc(_currentUser.uid).update({
+        favEvents: firebase.firestore.FieldValue.arrayRemove(eventId)
+    });
+}
 // create new event
 // add a new event to firestore 
 
