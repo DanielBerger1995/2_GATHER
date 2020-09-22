@@ -362,6 +362,10 @@ h7 {
   max-width: 150px;
 }
 
+.specific-event-button {
+  margin: 0 auto;
+}
+
 .back-selected{
   position: absolute;
   z-index: 100;

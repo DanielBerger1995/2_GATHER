@@ -86,15 +86,17 @@ function appendEventsDetails(id) {
     console.log();
     htmlTemplate += `
         <article>
+        <button class="back-selected" onclick="goBack()"><i class="fas fa-chevron-left"></i></button>
         <img src="${specificEvent.img}">
             <div class="event_title">
+            <div class="different-font">
                 <h2>${specificEvent.name}</h2>
-                <h4>Organiser: ${specificEvent.organiser}</h4>
+                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
                 <h4><i class="fas fa-calendar-day specific-event-icon"></i>${specificEvent.date}</h4>
                 <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
+                </div>
                 <p>${specificEvent.description}</p>
                 <p>${generateFavEventButton(specificEvent.id)}</p>
-                
             </div>
         </article>
         `;
@@ -102,12 +104,16 @@ function appendEventsDetails(id) {
     document.querySelector('#select-event').innerHTML = htmlTemplate;
 }
 
+function goBack() {
+    window.history.back();
+}
+
 function generateFavEventButton(specificEventId) {
     let btnTemplate = `
-    <button onclick="addToFavourites('${specificEventId}')">Add to favourites</button>`;
+    <button onclick="addToFavourites('${specificEventId}')" class="specific-event-button">GOING</button>`;
     if (_currentUser.favEvents && _currentUser.favEvents.includes(specificEventId)) {
         btnTemplate = `
-      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">Remove from favourites</button>`;
+      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">CANCEL</button>`;
     }
     return btnTemplate;
 }
