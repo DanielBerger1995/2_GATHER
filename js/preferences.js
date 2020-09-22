@@ -3,6 +3,7 @@
 
 function goHome() {
     navigateTo("home");
+    window.location.reload();
     document.getElementById("tabbar").style.display = "block";
 }
 
