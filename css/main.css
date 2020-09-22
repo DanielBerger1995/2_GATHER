@@ -1299,4 +1299,54 @@ h3 {
   margin: 30px auto;
 }
 
+.tickets-container {
+  margin: auto;
+}
+
+#tickets-container>a article {
+  
+  background-image: url("/2_GATHER-master/img/Subtraction_2.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  height: 180px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ 
+}
+
+.ticket-text {
+width: 50vw;
+padding-left: 25px;
+
+}
+
+
+.QR {
+  content:url(/2_GATHER-master/img/Qr.png) ;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 40px;
+  top: 30px;
+  
+ 
+}
+
+#calendar-container .QR {
+  visibility: hidden;
+
+}
+#calendar-container>a article  {
+  
+ margin: 22px;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
 

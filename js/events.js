@@ -58,7 +58,7 @@ function appendEvents(events) {
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <h4>${moment(event.date.toDate()).calendar()}</h4>
+                <h4>${event.date}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
                 <p>${event.location}</p>
                 <h7 clas="event_price">${event.price}</h7>
@@ -68,7 +68,7 @@ function appendEvents(events) {
     }
 
     document.querySelector('#movie-container').innerHTML = htmlTemplate;
-    document.querySelector('#calendar-events').innerHTML = htmlTemplate;
+
 }
 
 // select specific event
@@ -90,7 +90,7 @@ function appendEventsDetails(id) {
             <div class="event_title">
                 <h2>${specificEvent.name}</h2>
                 <h4>${specificEvent.organiser}</h4>
-                <h4>${moment(specificEvent.date.toDate()).calendar()}</h4>
+                <h4>${specificEvent.date}</h4>
                 <p>${specificEvent.location}</p>
                 <p>${specificEvent.description}</p>
                 <p>${generateFavEventButton(specificEvent.id)}</p>
@@ -116,6 +116,8 @@ function generateFavEventButton(specificEventId) {
     return btnTemplate;
 }
 
+
+
 // append favourite movies to the DOM
 async function appendFavEvents(favEventIds = []) {
     let htmlTemplate = "";
@@ -125,6 +127,7 @@ async function appendFavEvents(favEventIds = []) {
         for (let eventId of favEventIds) {
             await _eventRef.doc(eventId).get().then(function (doc) {
                 let event = doc.data();
+                console.log(event);
                 event.id = doc.id;
                 htmlTemplate += `
          <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
