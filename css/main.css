@@ -1315,7 +1315,7 @@ h3 {
 
 #tickets-container>a article {
   
-  background-image: url("/2_GATHER-master/img/Subtraction_2.svg");
+  background-image: url("/2_GATHER/img/Subtraction_2.svg");
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
@@ -1332,12 +1332,13 @@ h3 {
 .ticket-text {
 width: 50vw;
 padding-left: 25px;
+font-size: 10px;
 
 }
 
 
 .QR {
-  content:url(/2_GATHER-master/img/Qr.png) ;
+  content:url("/2_GATHER/img/Qr.png") ;
   width: 80px;
   height: 80px;
   position: absolute;

@@ -58,9 +58,10 @@ function appendEvents(events) {
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <h4>${event.date}</h4>
+                <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.location}</p>
+                <p>${event.place}</p>
+                <img src="${event.friends}">
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -92,7 +93,7 @@ function appendEventsDetails(id) {
             <div class="different-font">
                 <h2>${specificEvent.name}</h2>
                 <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
-                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${specificEvent.date}</h4>
+                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
                 <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
                 </div>
                 <p>${specificEvent.description}</p>
@@ -134,8 +135,8 @@ async function appendFavEvents(favEventIds = []) {
                 htmlTemplate += `
          <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
           <div class="ticket-text"><h2>${event.name}</h2>
-          <h2>${event.date}</h2>
-          <p>${event.location}</p>
+          <h2>${moment(event.date.toDate()).calendar()}</h2>
+          <p>${event.place}</p>
           <p>${event.category}</p>
           </div>
           <p class="QR"></p>
@@ -144,7 +145,7 @@ async function appendFavEvents(favEventIds = []) {
             });
         }
     }
-    document.querySelector('#tickets-container').innerHTML = htmlTemplate;
+
     document.querySelector('#calendar-container').innerHTML = htmlTemplate;
 }
 
@@ -229,9 +230,9 @@ function appendMyEvents(myEvents) {
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <h4>${event.date}</h4>
+                <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.location}</p>
+                <p>${event.place}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
@@ -637,13 +638,13 @@ function appendCategories(filteredEvents) {
     let htmlTemplate = "";
     for (let event of filteredEvents) {
         htmlTemplate += `
-        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
+        a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <h4>${event.date}</h4>
+                <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.location}</p>
+                <p>${event.place}</p>
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
