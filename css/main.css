@@ -389,11 +389,6 @@ h7 {
 .specific-event-icon {
   margin-right: 10px;
 }
-
-.headline-icon {
-  display: flex;
-  justify-content: space-around;
-}
 /* ----------------- authentication styling ----------------- */
 #firebaseui-auth-container {
   top: 50%;

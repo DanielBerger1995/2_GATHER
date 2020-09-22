@@ -89,9 +89,9 @@ function appendEventsDetails(id) {
         <img src="${specificEvent.img}">
             <div class="event_title">
                 <h2>${specificEvent.name}</h2>
-                <h4>${specificEvent.organiser}</h4>
-                <h4>${specificEvent.date}</h4>
-                <p>${specificEvent.place}</p>
+                <h4>Organiser: ${specificEvent.organiser}</h4>
+                <h4><i class="fas fa-calendar-day specific-event-icon"></i>${specificEvent.date}</h4>
+                <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
                 <p>${specificEvent.description}</p>
                 <p>${generateFavEventButton(specificEvent.id)}</p>
                 
@@ -221,17 +221,13 @@ function appendMyEvents(myEvents) {
         htmlTemplate += `
         <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
-        <div class="padding">
-        <div class= "event_date"
-                <h4>${event.month}</h4>
-                <h5 class="text-adjust">${event.day}</h5>
-            </div>
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <p class="text-adjust" >Organiser: ${event.organiser}</p>
+                <h4>${event.date}</h4>
+                <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <p>${event.location}</p>
+                <h7 clas="event_price">${event.price}</h7>
             </div>
-            <h7 clas="event_price">${event.price}</h7>
-        </div>
         </article></a>
         `;
     }
