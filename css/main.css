@@ -320,7 +320,7 @@ input {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 16px;
+  padding: 16px; 
 }
 
 .event_date {
@@ -345,6 +345,55 @@ h7 {
   margin: 1em 0;
 }
 
+/*----------- SPECIFIC EVENT ----------*/
+#select-event >article img {
+  width: 100%;
+  position: relative;
+}
+
+
+.selected_event-button {
+  margin-bottom: -100px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.button-interested-going {
+  max-width: 150px;
+}
+
+.back-selected{
+  position: absolute;
+  z-index: 100;
+  margin-top: 20px;
+  border: none;
+  padding: 0;
+  width: 20px;
+  margin-left: 22.5px;
+}
+
+.margin-page {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  min-height: 0;
+  height: 100%;
+}
+
+.different-font {
+  font-family: rift,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.specific-event-icon {
+  margin-right: 10px;
+}
+
+.headline-icon {
+  display: flex;
+  justify-content: space-around;
+}
 /* ----------------- authentication styling ----------------- */
 #firebaseui-auth-container {
   top: 50%;
@@ -1208,7 +1257,7 @@ h3 {
 
 #closeCatBut {
   display: none;
-  width: 120px;
+  width: 125px;
   margin-top: 20px;
   margin-left: 1.3em;
   padding: 8px;
@@ -1249,3 +1298,5 @@ h3 {
   height: 500px;
   margin: 30px auto;
 }
+
+
