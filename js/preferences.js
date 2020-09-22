@@ -5,6 +5,7 @@ function goHome() {
     navigateTo("home");
     window.location.reload();
     document.getElementById("tabbar").style.display = "block";
+
 }
 
 function hideNav() {
@@ -16,7 +17,7 @@ function hideNav() {
 
 function addCategoryIcon() {
     for (let event of _events) {
-        if (event.category == music){
+        if (event.category == music) {
             specificEvent = event;
         }
     }
