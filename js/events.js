@@ -707,7 +707,7 @@ function appendCategories(filteredEvents) {
     let htmlTemplate = "";
     for (let event of filteredEvents) {
         htmlTemplate += `
-        a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
+        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
