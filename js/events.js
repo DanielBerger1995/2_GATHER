@@ -219,7 +219,7 @@ function appendMyEvents(myEvents) {
     for (let event of myEvents) {
         console.log(event);
         htmlTemplate += `
-        <article>
+        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
         <div class="padding">
         <div class= "event_date"
@@ -232,7 +232,7 @@ function appendMyEvents(myEvents) {
             </div>
             <h7 clas="event_price">${event.price}</h7>
         </div>
-        </article>
+        </article></a>
         `;
     }
 
@@ -635,20 +635,16 @@ function appendCategories(filteredEvents) {
     let htmlTemplate = "";
     for (let event of filteredEvents) {
         htmlTemplate += `
-        <article>
+        <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
         <img src="${event.img}">
-        <div class="padding">
-        <div class= "event_date"
-                <h4>${event.month}</h4>
-                <h5 class="text-adjust">${event.day}</h5>
-            </div>
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <p class="text-adjust" >Organiser: ${event.organiser}</p>
+                <h4>${event.date}</h4>
+                <p class="text-adjust">Organiser: ${event.organiser}</p>
+                <p>${event.location}</p>
+                <h7 clas="event_price">${event.price}</h7>
             </div>
-            <h7 clas="event_price">${event.price}</h7>
-        </div>
-        </article>
+        </article></a>
         `;
     }
     document.querySelector('#filtered-events').innerHTML = htmlTemplate;
