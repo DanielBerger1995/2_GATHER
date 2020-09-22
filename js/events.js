@@ -315,6 +315,7 @@ function openMusic(value) {
         value = "music";
         let filteredEvents = events.filter(event => event.category.includes("music"));
 
+
         console.log(filteredEvents);
         appendCategories(filteredEvents);
     });
@@ -337,6 +338,7 @@ function openParty(value) {
 
         value = "party";
         let filteredEvents = events.filter(event => event.category.includes("party"));
+
 
         console.log(filteredEvents);
         appendCategories(filteredEvents);
