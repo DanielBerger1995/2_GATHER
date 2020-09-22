@@ -78,13 +78,14 @@ function appendLocations() {
         <img src="${event.img}">
             <div class="event_title">
                 <h2>${event.name}</h2>
-                <h4>${event.date}</h4>
+                <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.location}</p>
+                <p>${event.place}</p>
+                <img src="${event.friends}">
                 <h7 clas="event_price">${event.price}</h7>
             </div>
         </article></a>
     `;
     }
-    document.getElementById("movie-container").innerHTML = template;
+    document.getElementById("event-container").innerHTML = template;
 }
