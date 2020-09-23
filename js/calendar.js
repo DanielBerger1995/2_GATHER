@@ -1,13 +1,13 @@
-function getDate(){
+function getDate() {
 
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
 
-today = mm + '/' + dd + '/' + yyyy;
+    today = dd + '/' + mm + '/' + yyyy;
 
-document.querySelector("#calendar-container").innerHTML = today;
+    document.querySelector("#calendar-header-container").innerHTML = today;
 }
 
 getDate();

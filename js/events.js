@@ -21,17 +21,6 @@ function orderByUpcoming() {
 
 orderByUpcoming();
 
-function orderByLocation() {
-    _eventRef.orderBy("location").onSnapshot(function (snapshotData) {
-        let events = [];
-        snapshotData.forEach(function (doc) {
-            let event = doc.data();
-            event.id = doc.id;
-            events.push(event);
-        });
-        appendEvents(events);
-    });
-}
 
 function orderByFriends() {
     _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
@@ -119,9 +108,9 @@ function goBack() {
 function generateFavEventButton(specificEventId) {
     let btnTemplate = `
     <button onclick="addToFavourites('${specificEventId}'), showGoing()" class="specific-event-button">GOING</button>`;
-    if (_currentUser.favEvents && _currentUser.favEvents.includes(specificEventId)) {
+    if (_currentUser.favEvents.includes(specificEventId)) {
         btnTemplate = `
-      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">CANCEL</button>`;
+      <button onclick="removeFromFavourites('${specificEventId}'), showGoingAway()" class="rm">CANCEL</button>`;
     }
     return btnTemplate;
 }
@@ -145,6 +134,7 @@ async function appendFavEvents(favEventIds = []) {
           <h5>${moment(event.date.toDate()).calendar()}</h5>
           <p>${event.place}</p>
           </div>
+          <div class="QR"></div>
           </div>
         </article></a>
       `;
@@ -153,14 +143,29 @@ async function appendFavEvents(favEventIds = []) {
     }
 
     document.querySelector('#calendar-container').innerHTML = htmlTemplate;
-    
+    document.querySelector('#tickets-container').innerHTML = htmlTemplate;
 }
-
+// on click add "going"
 function showGoing() {
     let element = document.querySelector(".going")
-    element.classList.toggle("goingoff");
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    }
+    else {
+        element.style.display = "block";
+    }
 }
 
+
+function showGoingAway() {
+    let element = document.querySelector(".going")
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    }
+    else {
+        element.style.display = "none";
+    }
+}
 // adds a given eventId to the favEvents array inside _currentUser
 function addToFavourites(eventId) {
     showLoader(true);
@@ -186,7 +191,7 @@ function removeFromFavourites(eventId) {
 
 function createAnEvent() {
 
-    let nameInput = document.querySelector('#name');
+    let nameInput = document.querySelector('#nameevent');
     let descriptionInput = document.querySelector('#description');
     let imageInput = document.querySelector('#imagePreview');
     let priceInput = document.querySelector('#price');
@@ -211,7 +216,6 @@ function createAnEvent() {
     document.getElementById("create").style.display = "none";
     document.getElementById("myForm").reset();
     document.getElementById("my-events-section").style.display = "block";
-
 }
 
 // add a new event to the profile page
@@ -282,8 +286,8 @@ function appendMyEventsDetails(id) {
                 <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
                 </div>
                 <p>${specificEvent.description}</p>
-                <button onclick="updateEventOpen()">update event</button>
-                <button onclick="updateEvent()">delete event</button>
+                <button class="update_event_button" onclick="updateEventOpen()">update event</button>
+                <button class="delete_event_button" onclick="updateEvent()">delete event</button>
                 
             </div>
         </article>

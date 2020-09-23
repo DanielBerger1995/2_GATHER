@@ -359,7 +359,10 @@ h7 {
 }
 
 /*********************CALENDAR*************************/
-#calendar-container {
+#calendar-header-container {
+  
+  font-family: rift,sans-serif;
+  font-weight: 500;
   width: 80%;
   height: 20px;
   background-color: rgb(172, 172, 172);
@@ -368,6 +371,8 @@ h7 {
   padding: 20px;
   font-size: 20px;
 }
+
+
 
 
 
@@ -693,6 +698,20 @@ select {
   width: 100%;
 }
 
+.update_event_button {
+  margin: 1em auto;
+}
+
+.delete_event_button {
+  border: #CC3B26 solid 2px;
+  color: #CC3B26;
+  margin: 1em auto;
+}
+
+#updatedescription {
+  margin-bottom: 150px;
+}
+
 /*------------------------- setting page -----------------------*/
 
 .fa-cog:before {
@@ -927,6 +946,9 @@ input {
   margin: 10px auto;
 }
 
+#password {
+  margin-bottom: 100px;
+}
 
 /*-----------------TICKETS PAGE---------------------*/
 
@@ -1347,7 +1369,7 @@ h3 {
 }
 
 /*********************CALENDAR*************************/
-#calendar-container {
+#calendar-header-container {
   width: 80%;
   height: 20px;
   background-color: rgb(236, 236, 236);
@@ -1377,6 +1399,7 @@ h3 {
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+ 
 }
 #calendar-events> a article img {
   display: none;
@@ -1389,6 +1412,11 @@ h3 {
   margin: 30px auto;
 }
 
+.rm {
+  border-color: var(--red);
+  color: var(--red);
+}
+
 
 .goingoff {
  visibility: hidden;
@@ -1399,8 +1427,8 @@ h3 {
   right: 20px;
 }
 .going {
+  display: none;
   background-color: #067354;
-  
   top: 180px;
   padding: 5px 10px;
   
@@ -1442,25 +1470,32 @@ h3 {
   display: flex;
   height: 180px;
   text-decoration: none;
-  display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: space-between;
+  justify-content: center;
+  text-align: left;
+   border-right: none;
+   color: black;
+   padding-left: 30px;
+   padding-right: 30px;
  
 }
-
+#tickets-container>a {
+  text-decoration: none;
+}
 .ticket-text {
-  padding: 0;
+  padding: 0 0 0 10px;
+  margin-right: 0px;
  }
-
-
+#calendar-container>a article .ticket-text {
+ border-left: #0A9C77 solid 25px;
+}
 .QR {
-  content:url("/img/Qr.png") ;
+  content:url("../img/Qr.png");
   width: 80px;
   height: 80px;
   float: right;
-  right: 40px;
-  top: 30px;
-  align-self: flex-end;
+  padding-top: 10px ;
  
 }
 
@@ -1469,16 +1504,19 @@ h3 {
 
 }
 #calendar-container>a article  {
-  width: 300px;
-  margin-top: 325px;
+  width: auto;
   display: flex;
   flex-direction: column;
   text-align: left;
   padding: 10px;
+  width: 80%;
+  margin: 30px auto;
 
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  
+  
 }
 
 #calendar-container>a {
@@ -1506,3 +1544,4 @@ h3 {
 #calendar-container>a h5, h4, p {
   /* float: left; */
 }
+
