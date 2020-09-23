@@ -77,10 +77,6 @@ function hideTabbar(hide) {
     }
 }
 
-function appendUserData() {
-    document.querySelector('#name').value = _currentUser.displayName;
-
-}
 //=== Init function for whole SPA ===//
 function init() {
     // init user data and favourite movies
@@ -92,7 +88,7 @@ function init() {
                 ...firebase.auth().currentUser,
                 ...userData.data()
             }; //concating two objects: authUser object and userData objec from the db
-            appendUserData();
+
             appendFavEvents(_currentUser.favEvents);
             if (_events) {
                 appendEvents(_events); // refresh movies when user data changes
@@ -100,6 +96,5 @@ function init() {
             showLoader(false);
         }
     });
-
 }
 
