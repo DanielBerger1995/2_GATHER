@@ -153,7 +153,7 @@ async function appendFavEvents(favEventIds = []) {
     }
 
     document.querySelector('#calendar-container').innerHTML = htmlTemplate;
-    
+
 }
 
 function showGoing() {

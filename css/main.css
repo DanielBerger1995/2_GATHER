@@ -359,7 +359,7 @@ h7 {
 }
 
 /*********************CALENDAR*************************/
-#calendar-container {
+#calendar-header-container {
   width: 80%;
   height: 20px;
   background-color: rgb(172, 172, 172);
@@ -1364,7 +1364,7 @@ h3 {
 }
 
 /*********************CALENDAR*************************/
-#calendar-container {
+#calendar-header-container {
   width: 80%;
   height: 20px;
   background-color: rgb(236, 236, 236);
@@ -1394,6 +1394,7 @@ h3 {
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+ 
 }
 #calendar-events> a article img {
   display: none;
@@ -1405,6 +1406,7 @@ h3 {
   height: 500px;
   margin: 30px auto;
 }
+
 
 
 .goingoff {
@@ -1466,7 +1468,10 @@ h3 {
 }
 
 .ticket-text {
-  padding: 0;
+  padding: 0 0 0 10px;
+  border-left: #0A9C77 solid 25px;
+  margin-right: 0px;
+  
  }
 
 
@@ -1486,16 +1491,18 @@ h3 {
 
 }
 #calendar-container>a article  {
-  width: 300px;
-  margin-top: 325px;
+  width: auto;
   display: flex;
   flex-direction: column;
   text-align: left;
   padding: 10px;
+  width: 80%;
+  margin: 30px auto;
 
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+  
 }
 
 #calendar-container>a {
@@ -1523,3 +1530,4 @@ h3 {
 #calendar-container>a h5, h4, p {
   /* float: left; */
 }
+
