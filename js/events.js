@@ -186,7 +186,7 @@ function removeFromFavourites(eventId) {
 
 function createAnEvent() {
 
-    let nameInput = document.querySelector('#name');
+    let nameInput = document.querySelector('#nameevent');
     let descriptionInput = document.querySelector('#description');
     let imageInput = document.querySelector('#imagePreview');
     let priceInput = document.querySelector('#price');
@@ -211,7 +211,6 @@ function createAnEvent() {
     document.getElementById("create").style.display = "none";
     document.getElementById("myForm").reset();
     document.getElementById("my-events-section").style.display = "block";
-
 }
 
 // add a new event to the profile page
@@ -282,8 +281,8 @@ function appendMyEventsDetails(id) {
                 <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
                 </div>
                 <p>${specificEvent.description}</p>
-                <button onclick="updateEventOpen()">update event</button>
-                <button onclick="updateEvent()">delete event</button>
+                <button class="update_event_button" onclick="updateEventOpen()">update event</button>
+                <button class="delete_event_button" onclick="updateEvent()">delete event</button>
                 
             </div>
         </article>

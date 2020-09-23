@@ -693,6 +693,20 @@ select {
   width: 100%;
 }
 
+.update_event_button {
+  margin: 1em auto;
+}
+
+.delete_event_button {
+  border: #CC3B26 solid 2px;
+  color: #CC3B26;
+  margin: 1em auto;
+}
+
+#updatedescription {
+  margin-bottom: 150px;
+}
+
 /*------------------------- setting page -----------------------*/
 
 .fa-cog:before {
@@ -927,6 +941,9 @@ input {
   margin: 10px auto;
 }
 
+#password {
+  margin-bottom: 100px;
+}
 
 /*-----------------TICKETS PAGE---------------------*/
 
