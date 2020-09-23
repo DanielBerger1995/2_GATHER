@@ -130,7 +130,7 @@ function generateFavEventButton(specificEventId) {
 async function appendFavEvents(favEventIds = []) {
     let htmlTemplate = "";
     if (favEventIds.length === 0) {
-        htmlTemplate = "<p>Please, add events to your Calendar.</p>";
+        htmlTemplate = "";
     } else {
         for (let eventId of favEventIds) {
             await _eventRef.doc(eventId).get().then(function (doc) {
