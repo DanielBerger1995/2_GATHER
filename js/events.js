@@ -61,7 +61,6 @@ function appendEvents(events) {
                 <h2>${event.name}</h2>
                 <h4>${moment(event.date.toDate()).calendar()}</h4>
                 <p class="text-adjust">Organiser: ${event.organiser}</p>
-                <p>${event.place}</p>
                 <img class="friends_icons" src="${event.friends}">
                 <h7 clas="event_price">${event.price}</h7>
             </div>
@@ -95,7 +94,7 @@ function appendEventsDetails(id) {
             <div class="different-font">
             
                 <h2>${specificEvent.name}</h2>
-                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4>
+                <h4>Organiser: <span style="font-weight: 400">${specificEvent.organiser}</span></h4><br>
                 <h4><i class="fas fa-calendar-day specific-event-icon"></i>${moment(specificEvent.date.toDate()).calendar()}</h4>
                 <p><i class="fas fa-compass specific-event-icon"></i>${specificEvent.place}</p>
                 </div>
@@ -140,12 +139,13 @@ async function appendFavEvents(favEventIds = []) {
                 event.id = doc.id;
                 htmlTemplate += `
          <a href="#select-event" onclick="appendEventsDetails('${event.id}')"><article>
-          <div class="ticket-text"><h2>${event.name}</h2>
-          <h2>${moment(event.date.toDate()).calendar()}</h2>
+          <div class="ticket-text">
+          <div style="float: left">
+          <h4>${event.name}</h4>
+          <h5>${moment(event.date.toDate()).calendar()}</h5>
           <p>${event.place}</p>
-         
           </div>
-          <p class="QR"></p>
+          </div>
         </article></a>
       `;
             });
@@ -153,6 +153,7 @@ async function appendFavEvents(favEventIds = []) {
     }
 
     document.querySelector('#calendar-container').innerHTML = htmlTemplate;
+    
 }
 
 function showGoing() {
