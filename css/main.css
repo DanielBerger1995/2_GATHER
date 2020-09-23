@@ -1412,6 +1412,10 @@ h3 {
   margin: 30px auto;
 }
 
+.rm {
+  border-color: var(--red);
+  color: var(--red);
+}
 
 
 .goingoff {
@@ -1423,8 +1427,8 @@ h3 {
   right: 20px;
 }
 .going {
+  display: none;
   background-color: #067354;
-  
   top: 180px;
   padding: 5px 10px;
   
@@ -1471,13 +1475,20 @@ h3 {
   align-items: flex-start;
  
 }
-
+#tickets-container>a {
+  text-decoration: none;
+}
 .ticket-text {
   padding: 0 0 0 10px;
   border-left: #0A9C77 solid 25px;
   margin-right: 0px;
   
  }
+width: 50vw;
+padding-left: 25px;
+font-size: 12px;
+color: black;
+margin-top: 20px;
 
 
 .QR {
