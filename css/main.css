@@ -1491,7 +1491,7 @@ h3 {
  border-left: #0A9C77 solid 25px;
 }
 .QR {
-  content:url("/img/Qr.png") ;
+  content:url("../img/Qr.png");
   width: 80px;
   height: 80px;
   float: right;
