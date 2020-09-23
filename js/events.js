@@ -21,17 +21,6 @@ function orderByUpcoming() {
 
 orderByUpcoming();
 
-function orderByLocation() {
-    _eventRef.orderBy("location").onSnapshot(function (snapshotData) {
-        let events = [];
-        snapshotData.forEach(function (doc) {
-            let event = doc.data();
-            event.id = doc.id;
-            events.push(event);
-        });
-        appendEvents(events);
-    });
-}
 
 function orderByFriends() {
     _eventRef.orderBy("name").onSnapshot(function (snapshotData) {
@@ -119,9 +108,9 @@ function goBack() {
 function generateFavEventButton(specificEventId) {
     let btnTemplate = `
     <button onclick="addToFavourites('${specificEventId}'), showGoing()" class="specific-event-button">GOING</button>`;
-    if (_currentUser.favEvents && _currentUser.favEvents.includes(specificEventId)) {
+    if (_currentUser.favEvents.includes(specificEventId)) {
         btnTemplate = `
-      <button onclick="removeFromFavourites('${specificEventId}')" class="rm">CANCEL</button>`;
+      <button onclick="removeFromFavourites('${specificEventId}'), showGoingAway()" class="rm">CANCEL</button>`;
     }
     return btnTemplate;
 }
@@ -153,14 +142,29 @@ async function appendFavEvents(favEventIds = []) {
     }
 
     document.querySelector('#calendar-container').innerHTML = htmlTemplate;
-    
+    document.querySelector('#tickets-container').innerHTML = htmlTemplate;
 }
-
+// on click add "going"
 function showGoing() {
     let element = document.querySelector(".going")
-    element.classList.toggle("goingoff");
+    if (element.style.display === "block") {
+        element.style.display = "none";
+    }
+    else {
+        element.style.display = "block";
+    }
 }
 
+
+function showGoingAway() {
+    let element = document.querySelector(".going")
+    if (element.style.display === "none") {
+        element.style.display = "block";
+    }
+    else {
+        element.style.display = "none";
+    }
+}
 // adds a given eventId to the favEvents array inside _currentUser
 function addToFavourites(eventId) {
     showLoader(true);
