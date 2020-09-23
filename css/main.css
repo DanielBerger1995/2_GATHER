@@ -360,9 +360,7 @@ h7 {
 
 /*********************CALENDAR*************************/
 #calendar-header-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  
   font-family: rift,sans-serif;
   font-weight: 500;
   width: 80%;
