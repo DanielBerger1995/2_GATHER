@@ -134,6 +134,7 @@ async function appendFavEvents(favEventIds = []) {
           <h5>${moment(event.date.toDate()).calendar()}</h5>
           <p>${event.place}</p>
           </div>
+          <div class="QR"></div>
           </div>
         </article></a>
       `;

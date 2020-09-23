@@ -1471,12 +1471,13 @@ h3 {
   height: 180px;
   text-decoration: none;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: space-between;
   justify-content: center;
   text-align: left;
    border-right: none;
    color: black;
-   padding-left: 20px;
+   padding-left: 30px;
+   padding-right: 30px;
  
 }
 #tickets-container>a {
@@ -1494,9 +1495,6 @@ h3 {
   width: 80px;
   height: 80px;
   float: right;
-  right: 40px;
-  top: 30px;
-  align-self: flex-end;
  
 }
 
